@@ -38,20 +38,20 @@
 
         <!-- Social Bar -->
           <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 col-md-offset-9 col-md-3 social-bar">
+            <div class="row social-bar">
+              <div class="col-xs-12 col-md-offset-10 col-md-2">
                 <!-- Social Items -->
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-sign-in"></i>
+                    <a href="#"><i class="fa fa-sign-in"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-facebook"></i>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-youtube-play"></i>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-twitter"></i>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
                   </div>
                 <!-- / Social Items -->
               </div>
@@ -64,22 +64,23 @@
             <div class="row">
               <div class="col-xs-12 header-bar">
                 <!-- Header Logo -->
-                  <div class="col-xs-12 col-md-4 header-logo">
+                  <div class="col-xs-12 col-md-5 header-logo">
                     <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
                   </div>
                 <!-- / Header Logo -->
                 <!-- Header Menu -->
-                  <div class="col-xs-12 col-md-8 header-menu">
-                    <ul class="header-menu-list">
-                      <li>Home</li>
-                      <li>News</li>
-                      <li>Players</li>
-                      <li>Partners</li>
-                      <li>Matches</li>
-                      <li>About Us</li>
-                      <li>Contact</li>
+                  <div class="col-xs-12 col-md-7 header-menu" id="navigation">
+                    <ul class="header-menu-list list-inline">
+                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
+                      <li><a href="http://192.168.0.104/vongg">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Players</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Partners</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg">About Us</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Contact</a></li>
                       <li><span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang">PL</span></li>
                     </ul>
+                    <span id="slide-line"></span>
                   </div>
                 <!-- / Header Menu -->
               </div>
@@ -522,6 +523,10 @@
 
       </div>
     <!-- / Main Container -->
+
+    <!-- JS Scripts -->
+      <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
+    <!-- / JS Scripts -->
 
   </body>
 </html>

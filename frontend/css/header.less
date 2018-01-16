@@ -1,0 +1,50 @@
+.header-bar {
+  height: 250px;
+}
+
+.header-logo {
+  text-align: center;
+  line-height: 250px;
+}
+
+.header-menu {
+  padding-top: 125px;
+  text-align: center;
+  ul {
+    li {
+      font-weight: 700;
+      font-family: 'Source Sans Pro', sans-serif;
+      text-transform: uppercase;
+      color: @second-color;
+      font-size: 16px;
+      .pad-left-right(15px; 15px);
+      a {
+        color: @second-color;
+        &:hover {
+          color: @second-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.current-item {
+  color: @second-color !important;
+}
+
+// Main Navigation Area
+#navigation{
+  position: relative;
+
+  // Sliding Underline
+  #slide-line{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    margin-left: 5px;
+    background-color: @second-color;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+}
