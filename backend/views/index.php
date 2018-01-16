@@ -78,6 +78,7 @@
                       <li>Matches</li>
                       <li>About Us</li>
                       <li>Contact</li>
+                      <li><span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang">PL</span></li>
                     </ul>
                   </div>
                 <!-- / Header Menu -->
