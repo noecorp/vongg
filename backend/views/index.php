@@ -412,6 +412,16 @@
           </div>
         <!-- / Lineup Section -->
 
+        <!-- Partners Bar -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 partners-bar">
+                <h1>We currently don't have any partners. <a href="#">You are interested in?</a></h1>
+              </div>
+            </div>
+          </div>
+        <!-- / Partners Bar -->
+
       </div>
     <!-- / Main Container -->
 
