@@ -7,7 +7,6 @@ This project is a official project vongg.com website. Official website eSport te
 * v0.1 - *First elements for project*
 * v0.2 - *HTML*
 * v0.3 - *CSS*
-* v0.4 - *MVC*
 
 ## Authors
 
