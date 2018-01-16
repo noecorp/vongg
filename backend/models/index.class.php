@@ -237,4 +237,86 @@
 
       }
 
+      /* Lineup Models */
+
+        public function showLineupVariables() {
+
+          $selectLineupQuery = $this -> db -> prepare('SELECT * FROM lineup ORDER BY id ASC');
+          $selectLineupQuery->execute();
+
+            if ( $selectLineupQuery->rowCount() > 0 ) {
+
+              $lineupFullname = [];
+              $lineupName = [];
+              $lineupRole = [];
+              $lineupYears = [];
+              $lineupAvatar = [];
+              $lineupCountry = [];
+
+              $lineupCount = 0;
+
+              while ( $lineup = $selectLineupQuery->fetch() ) {
+                if ( $lineupCount != 5 ) {
+                  array_push($lineupFullname, $lineup['fullname']);
+                  array_push($lineupName, $lineup['name']);
+                  array_push($lineupRole, $lineup['role']);
+                  array_push($lineupYears, $lineup['years']);
+                  array_push($lineupAvatar, $lineup['avatar']);
+                  array_push($lineupCountry, $lineup['country']);
+                  $lineupCount++;
+                }
+              }
+
+              $this -> lineupFullname = $lineupFullname;
+              $this -> lineupName = $lineupName;
+              $this -> lineupRole = $lineupRole;
+              $this -> lineupYears = $lineupYears;
+              $this -> lineupAvatar = $lineupAvatar;
+              $this -> lineupCountry = $lineupCountry;
+
+            }
+
+        }
+
+        public function showLineup() {
+
+          $selectLineupQuery = $this -> db -> prepare('SELECT * FROM lineup ORDER BY id ASC');
+          $selectLineupQuery->execute();
+
+            if ( $selectLineupQuery->rowCount() > 0 ) {
+
+              $lineupFullname = [];
+              $lineupName = [];
+              $lineupRole = [];
+              $lineupYears = [];
+              $lineupAvatar = [];
+              $lineupCountry = [];
+
+              $lineupCount = 0;
+
+              while ( $lineup = $selectLineupQuery->fetch() ) {
+                if ( $lineupCount != 5 ) {
+                  array_push($lineupFullname, $lineup['fullname']);
+                  array_push($lineupName, $lineup['name']);
+                  array_push($lineupRole, $lineup['role']);
+                  array_push($lineupYears, $lineup['years']);
+                  array_push($lineupAvatar, $lineup['avatar']);
+                  array_push($lineupCountry, $lineup['country']);
+                  $lineupCount++;
+                }
+              }
+
+              $this -> lineupFullname = $lineupFullname;
+              $this -> lineupName = $lineupName;
+              $this -> lineupRole = $lineupRole;
+              $this -> lineupYears = $lineupYears;
+              $this -> lineupAvatar = $lineupAvatar;
+              $this -> lineupCountry = $lineupCountry;
+
+              require_once 'http://192.168.0.104/vongg/showHTML/showLineup';
+
+            }
+
+        }
+
   }
