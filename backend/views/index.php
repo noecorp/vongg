@@ -29,9 +29,6 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://192.168.0.104/vongg/frontend/js/js.cookie.js"></script>
-
-    <script src="http://192.168.0.104/vongg/frontend/js/change-lang.js?<?= time(); ?>"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,40 +75,21 @@
                     <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
                   </div>
                 <!-- / Header Logo -->
-                <?php if ( ! isset($_COOKIE['lang']) || $_COOKIE['lang'] == 'en' ) { ?>
-                <!-- Header Menu EN -->
+                <!-- Header Menu -->
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Players</a></li>
-                      <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
-                      <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
-                      <li><a href="http://192.168.0.104/vongg/aboutus">About Us</a></li>
-                      <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
-                      <span id="en" class="change-lang lang-active">EN</span> <span id="pl" class="change-lang">PL</span>
+                      <li><a href="http://192.168.0.104/vongg">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Players</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Partners</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg">About Us</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Contact</a></li>
+                      <li><span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang">PL</span></li>
                     </ul>
                     <span id="slide-line"></span>
                   </div>
-                <!-- / Header Menu EN -->
-                <?php } ?>
-                <?php if ( isset($_COOKIE['lang']) && $_COOKIE['lang'] == 'pl' ) { ?>
-                <!-- Header Menu PL -->
-                  <div class="col-xs-12 col-md-7 header-menu" id="navigation">
-                    <ul class="header-menu-list list-inline">
-                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
-                      <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
-                      <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
-                      <li><a href="http://192.168.0.104/vongg/aboutus">O nas</a></li>
-                      <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
-                      <span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang lang-active">PL</span>
-                    </ul>
-                    <span id="slide-line"></span>
-                  </div>
-                <!-- / Header Menu PL -->
-                <?php } ?>
+                <!-- / Header Menu -->
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 <?php
 
-  class NotFoundModel extends Model {
+  class NotFound extends Model {
 
     function __construct() {
 
