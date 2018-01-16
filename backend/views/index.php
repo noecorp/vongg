@@ -422,6 +422,41 @@
           </div>
         <!-- / Partners Bar -->
 
+        <!-- Videos & Twitter Section -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 videos-twitter-section">
+                <!-- Heading Section -->
+                  <div class="col-xs-12 col-md-6 heading-section">
+                    <h1>Newest Video</h1>
+                  </div>
+                <!-- / Heading Section -->
+                <!-- Heading Section (hidden XS and SM) -->
+                <div class="col-xs-12 col-md-6 hidden-xs hidden-sm heading-section">
+                  <h1>Twitter</h1>
+                </div>
+                <!-- / Heading Section (hidden XS and SM) -->
+                <!-- Newest Video -->
+                  <div class="col-xs-12 col-md-6 newest-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DS9k88dchXY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                <!-- / Newest Video -->
+                <!-- Twitter Posts (hidden XS and SM) -->
+                  <div class="col-xs-12 col-md-6 twitter-posts hidden-xs hidden-sm"></div>
+                <!-- / Twitter Posts (hidden XS and SM) -->
+                <!-- Heading Section (visible XS and SM) -->
+                  <div class="col-xs-12 col-md-6 visible-xs visible-sm heading-section">
+                    <h1>Twitter</h1>
+                  </div>
+                <!-- / Heading Section (visible XS and SM) -->
+                <!-- Twitter Posts (visible XS and SM) -->
+                  <div class="col-xs-12 col-md-6 twitter-posts visible-xs visible-sm"></div>
+                <!-- / Twitter Posts (visible XS and SM) -->
+              </div>
+            </div>
+          </div>
+        <!-- / Videos & Twitter Section -->
+
       </div>
     <!-- / Main Container -->
 
