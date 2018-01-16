@@ -36,6 +36,29 @@
     <!-- Main Container -->
       <div id="main-container">
 
+        <!-- Social Bar -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 col-md-offset-9 col-md-3 social-bar">
+                <!-- Social Items -->
+                  <div class="col-xs-3 social-item">
+                    <i class="fa fa-sign-in"></i>
+                  </div>
+                  <div class="col-xs-3 social-item">
+                    <i class="fa fa-facebook"></i>
+                  </div>
+                  <div class="col-xs-3 social-item">
+                    <i class="fa fa-youtube-play"></i>
+                  </div>
+                  <div class="col-xs-3 social-item">
+                    <i class="fa fa-twitter"></i>
+                  </div>
+                <!-- / Social Items -->
+              </div>
+            </div>
+          </div>
+        <!-- / Social Bar -->
+
       </div>
     <!-- / Main Container -->
 
