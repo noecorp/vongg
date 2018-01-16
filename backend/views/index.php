@@ -509,6 +509,16 @@
           </div>
         <!-- / BIG Footer -->
 
+        <!-- Footer -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 footer">
+                <p>&copy; Copyright <?= date('Y'); ?> | Team VoN | Designed by <a href="#">V1MPAR Dev</a></p>
+              </div>
+            </div>
+          </div>
+        <!-- / Footer -->
+
       </div>
     <!-- / Main Container -->
 
