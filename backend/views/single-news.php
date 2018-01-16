@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'backend/models/index.class.php';
-  $model = new IndexModel();
+  require_once 'backend/models/news.class.php';
+  $model = new NewsModel();
 
 ?>
 
@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: Home</title>
+    <title>Team VoN :: <?= $this -> pageTitle; ?></title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -82,8 +82,8 @@
                 <!-- Header Menu EN -->
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
-                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Home</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Players</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
@@ -99,8 +99,8 @@
                 <!-- Header Menu PL -->
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
-                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Home</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
@@ -121,45 +121,45 @@
           <div class="header-separator"></div>
         <!-- / Separator -->
 
-        <!-- News Section -->
+        <!-- Single News Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 news-section">
-                <?php $model -> showNews(); ?>
-              </div>
-            </div>
-          </div>
-        <!-- / News Section -->
-
-        <!-- Matches Section -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 matches-section">
-                <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
-                    <h1>Matches</h1>
+              <div class="col-xs-12 single-news-section">
+                <?php $model -> showSingleNews($this -> newsLink); ?>
+                <!-- Single News Item -->
+                  <div class="col-xs-12 col-md-6 col-md-offset-3 single-news-item" style="background: url('http://192.168.0.104/vongg/temp/mirage-smokes.jpg'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
+                    <div class="col-xs-12 single-news-box">
+                      <div class="col-xs-12 single-news-title">
+                        <h1>STANDARD SMOKES ON MIRAGE - GUIDES</h1>
+                      </div>
+                    </div>
                   </div>
-                <!-- / Heading Section -->
-                <?php $model -> showMatches(); ?>
-              </div>
-            </div>
-          </div>
-        <!-- / Matches Section -->
-
-        <!-- Lineup Section -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 lineup-section">
-                <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
-                    <h1>Lineup</h1>
+                  <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="col-xs-12 single-news-info">
+                      <div class="col-xs-3 single-news-tags">
+                        <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/guide">Guide</a></span>
+                      </div>
+                      <div class="col-xs-3 single-news-date">
+                        <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
+                      </div>
+                      <div class="col-xs-3 single-news-time">
+                        <i class="fa fa-clock-o"></i><span>20:15</span>
+                      </div>
+                      <div class="col-xs-3 single-news-pinned">
+                        <i class="fa fa-thumb-tack"></i><span>Pinned</span>
+                      </div>
+                    </div>
                   </div>
-                <!-- / Heading Section -->
-                <?php $model -> showLineup(); ?>
+                  <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="single-news-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                  </div>
+                <!-- / Single News Item -->
               </div>
             </div>
           </div>
-        <!-- / Lineup Section -->
+        <!-- / Single News Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">
@@ -170,41 +170,6 @@
             </div>
           </div>
         <!-- / Partners Bar -->
-
-        <!-- Videos & Twitter Section -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 videos-twitter-section">
-                <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-offset-1 col-md-5 heading-section">
-                    <h1>Newest Video</h1>
-                  </div>
-                <!-- / Heading Section -->
-                <!-- Heading Section (hidden XS and SM) -->
-                <div class="col-xs-12 col-md-offset-1 col-md-5 hidden-xs hidden-sm heading-section">
-                  <h1>Twitter</h1>
-                </div>
-                <!-- / Heading Section (hidden XS and SM) -->
-                <!-- Newest Video -->
-                  <div class="col-xs-12 col-md-offset-1 col-md-5 newest-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DS9k88dchXY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                  </div>
-                <!-- / Newest Video -->
-                <!-- Twitter Posts (hidden XS and SM) -->
-                  <div class="col-xs-12 col-md-6 twitter-posts hidden-xs hidden-sm"></div>
-                <!-- / Twitter Posts (hidden XS and SM) -->
-                <!-- Heading Section (visible XS and SM) -->
-                  <div class="col-xs-12 col-md-6 visible-xs visible-sm heading-section">
-                    <h1>Twitter</h1>
-                  </div>
-                <!-- / Heading Section (visible XS and SM) -->
-                <!-- Twitter Posts (visible XS and SM) -->
-                  <div class="col-xs-12 col-md-5 twitter-posts visible-xs visible-sm"></div>
-                <!-- / Twitter Posts (visible XS and SM) -->
-              </div>
-            </div>
-          </div>
-        <!-- / Videos & Twitter Section -->
 
         <!-- BIG Footer -->
           <div class="container-fluid">
