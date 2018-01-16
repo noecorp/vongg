@@ -38,20 +38,20 @@
 
         <!-- Social Bar -->
           <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 col-md-offset-9 col-md-3 social-bar">
+            <div class="row social-bar">
+              <div class="col-xs-12 col-md-offset-10 col-md-2">
                 <!-- Social Items -->
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-sign-in"></i>
+                    <a href="#"><i class="fa fa-sign-in"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-facebook"></i>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-youtube-play"></i>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
-                    <i class="fa fa-twitter"></i>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
                   </div>
                 <!-- / Social Items -->
               </div>
@@ -64,22 +64,23 @@
             <div class="row">
               <div class="col-xs-12 header-bar">
                 <!-- Header Logo -->
-                  <div class="col-xs-12 col-md-4 header-logo">
+                  <div class="col-xs-12 col-md-5 header-logo">
                     <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
                   </div>
                 <!-- / Header Logo -->
                 <!-- Header Menu -->
-                  <div class="col-xs-12 col-md-8 header-menu">
-                    <ul class="header-menu-list">
-                      <li>Home</li>
-                      <li>News</li>
-                      <li>Players</li>
-                      <li>Partners</li>
-                      <li>Matches</li>
-                      <li>About Us</li>
-                      <li>Contact</li>
+                  <div class="col-xs-12 col-md-7 header-menu" id="navigation">
+                    <ul class="header-menu-list list-inline">
+                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
+                      <li><a href="http://192.168.0.104/vongg">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Players</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Partners</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg">About Us</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Contact</a></li>
                       <li><span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang">PL</span></li>
                     </ul>
+                    <span id="slide-line"></span>
                   </div>
                 <!-- / Header Menu -->
               </div>
@@ -87,18 +88,22 @@
           </div>
         <!-- / Header Bar -->
 
+        <!-- Separator -->
+          <div class="header-separator"></div>
+        <!-- / Separator -->
+
         <!-- News Section -->
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-12 news-section">
                 <!-- Newest or Pinned News -->
-                  <div class="col-xs-12 col-md-6 news-item">
-                    <div class="news-info">
-                      <div class="news-title">
-                        <h1>Title</h1>
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 news-item news-big" style="background: url('http://192.168.0.104/vongg/temp/mirage-smokes.jpg'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
+                    <div class="col-xs-12 news-info-big">
+                      <div class="col-xs-12 news-title">
+                        <h1>Standard smokes on Mirage - Guide</h1>
                       </div>
                       <div class="col-xs-3 news-tags">
-                        <i class="fa fa-tags"></i><span>Tag</span>
+                        <i class="fa fa-tags"></i><span>Guide</span>
                       </div>
                       <div class="col-xs-3 news-date">
                         <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
@@ -113,13 +118,13 @@
                   </div>
                 <!-- / Newest or Pinned News -->
                 <!-- Second News -->
-                  <div class="col-xs-12 col-md-6 news-item">
-                    <div class="news-info">
-                      <div class="news-title">
-                        <h1>Title</h1>
+                  <div class="col-xs-12 col-md-offset-1 col-md-4 news-item news-small">
+                    <div class="col-xs-12 news-info-small">
+                      <div class="col-xs-12 news-title">
+                        <h1>First tournament</h1>
                       </div>
                       <div class="col-xs-4 news-tags">
-                        <i class="fa fa-tags"></i><span>Tag</span>
+                        <i class="fa fa-tags"></i><span>Team</span>
                       </div>
                       <div class="col-xs-4 news-date">
                         <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
@@ -131,13 +136,13 @@
                   </div>
                 <!-- / Second News -->
                 <!-- Third News -->
-                  <div class="col-xs-12 col-md-6 news-item">
-                    <div class="news-info">
-                      <div class="news-title">
-                        <h1>Title</h1>
+                  <div class="col-xs-12 col-md-offset-1 col-md-4 news-item news-small">
+                    <div class="col-xs-12 news-info-small">
+                      <div class="col-xs-12 news-title">
+                        <h1>Official lineup for CS:GO</h1>
                       </div>
                       <div class="col-xs-4 news-tags">
-                        <i class="fa fa-tags"></i><span>Tag</span>
+                        <i class="fa fa-tags"></i><span>Team</span>
                       </div>
                       <div class="col-xs-4 news-date">
                         <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
@@ -148,6 +153,24 @@
                     </div>
                   </div>
                 <!-- / Third News -->
+                <!-- Fourth News -->
+                  <div class="col-xs-12 col-md-offset-1 col-md-4 news-item news-small">
+                    <div class="col-xs-12 news-info-small">
+                      <div class="col-xs-12 news-title">
+                        <h1>Welcome on official website!</h1>
+                      </div>
+                      <div class="col-xs-4 news-tags">
+                        <i class="fa fa-tags"></i><span>Website</span>
+                      </div>
+                      <div class="col-xs-4 news-date">
+                        <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
+                      </div>
+                      <div class="col-xs-4 news-time">
+                        <i class="fa fa-clock-o"></i><span>04:18</span>
+                      </div>
+                    </div>
+                  </div>
+                <!-- / Fourth News -->
               </div>
             </div>
           </div>
@@ -158,12 +181,12 @@
             <div class="row">
               <div class="col-xs-12 matches-section">
                 <!-- Heading Section -->
-                  <div class="col-xs-12 heading-section">
+                  <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
                     <h1>Matches</h1>
                   </div>
                 <!-- / Heading Section -->
                 <!-- Match Item #1 -->
-                  <div class="col-xs-12 col-md-3 match-item">
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 match-item">
                     <!-- First Row -->
                       <div class="col-xs-4 match-avatar">
                         <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
@@ -177,27 +200,27 @@
                     <!-- / First Row -->
                     <!-- Second Row -->
                       <div class="col-xs-6 match-date">
-                        <h2>16 January 2018</h2>
+                        <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i>16 January 2018</h2>
                       </div>
                       <div class="col-xs-6 match-time">
-                        <h2>04:47</h2>
+                        <h2>04:47<i class="fa fa-clock-o" style="padding-left: 10px;"></i></h2>
                       </div>
                     <!-- / Second Row -->
                     <!-- Third Row -->
-                      <div class="col-xs-4 match-map">
+                    <div class="col-xs-12 match-type">
+                      <h3>PCW</h3>
+                    </div>
+                      <div class="col-xs-6 match-map">
                         <h3>de_mirage</h3>
                       </div>
-                      <div class="col-xs-4 match-type">
-                        <h3>PCW</h3>
-                      </div>
-                      <div class="col-xs-4 match-name">
+                      <div class="col-xs-6 match-name">
                         <h3>PCW #1</h3>
                       </div>
                     <!-- / Third Row -->
                   </div>
                 <!-- / Match Item #1 -->
                 <!-- Match Item #2 -->
-                  <div class="col-xs-12 col-md-3 match-item">
+                  <div class="col-xs-12 col-md-5 match-item">
                     <!-- First Row -->
                       <div class="col-xs-4 match-avatar">
                         <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
@@ -211,27 +234,27 @@
                     <!-- / First Row -->
                     <!-- Second Row -->
                       <div class="col-xs-6 match-date">
-                        <h2>16 January 2018</h2>
+                        <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i>16 January 2018</h2>
                       </div>
                       <div class="col-xs-6 match-time">
-                        <h2>04:48</h2>
+                        <h2>04:48<i class="fa fa-clock-o" style="padding-left: 10px;"></i></h2>
                       </div>
                     <!-- / Second Row -->
                     <!-- Third Row -->
-                      <div class="col-xs-4 match-map">
+                    <div class="col-xs-12 match-type">
+                      <h3>PCW</h3>
+                    </div>
+                      <div class="col-xs-6 match-map">
                         <h3>de_mirage</h3>
                       </div>
-                      <div class="col-xs-4 match-type">
-                        <h3>PCW</h3>
-                      </div>
-                      <div class="col-xs-4 match-name">
-                        <h3>PCW #2</h3>
+                      <div class="col-xs-6 match-name">
+                        <h3>PCW #1</h3>
                       </div>
                     <!-- / Third Row -->
                   </div>
                 <!-- / Match Item #2 -->
                 <!-- Match Item #3 -->
-                  <div class="col-xs-12 col-md-3 match-item">
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 match-item">
                     <!-- First Row -->
                       <div class="col-xs-4 match-avatar">
                         <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
@@ -245,27 +268,27 @@
                     <!-- / First Row -->
                     <!-- Second Row -->
                       <div class="col-xs-6 match-date">
-                        <h2>16 January 2018</h2>
+                        <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i>16 January 2018</h2>
                       </div>
                       <div class="col-xs-6 match-time">
-                        <h2>04:49</h2>
+                        <h2>04:49<i class="fa fa-clock-o" style="padding-left: 10px;"></i></h2>
                       </div>
                     <!-- / Second Row -->
                     <!-- Third Row -->
-                      <div class="col-xs-4 match-map">
+                    <div class="col-xs-12 match-type">
+                      <h3>PCW</h3>
+                    </div>
+                      <div class="col-xs-6 match-map">
                         <h3>de_mirage</h3>
                       </div>
-                      <div class="col-xs-4 match-type">
-                        <h3>PCW</h3>
-                      </div>
-                      <div class="col-xs-4 match-name">
+                      <div class="col-xs-6 match-name">
                         <h3>PCW #1</h3>
                       </div>
                     <!-- / Third Row -->
                   </div>
                 <!-- / Match Item #3 -->
                 <!-- Match Item #4 -->
-                  <div class="col-xs-12 col-md-3 match-item">
+                  <div class="col-xs-12 col-md-5 match-item">
                     <!-- First Row -->
                       <div class="col-xs-4 match-avatar">
                         <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
@@ -279,21 +302,21 @@
                     <!-- / First Row -->
                     <!-- Second Row -->
                       <div class="col-xs-6 match-date">
-                        <h2>16 January 2018</h2>
+                        <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i>16 January 2018</h2>
                       </div>
                       <div class="col-xs-6 match-time">
-                        <h2>04:50</h2>
+                        <h2>04:50<i class="fa fa-clock-o" style="padding-left: 10px;"></i></h2>
                       </div>
                     <!-- / Second Row -->
                     <!-- Third Row -->
-                      <div class="col-xs-4 match-map">
+                    <div class="col-xs-12 match-type">
+                      <h3>PCW</h3>
+                    </div>
+                      <div class="col-xs-6 match-map">
                         <h3>de_mirage</h3>
                       </div>
-                      <div class="col-xs-4 match-type">
-                        <h3>PCW</h3>
-                      </div>
-                      <div class="col-xs-4 match-name">
-                        <h3>PCW #4</h3>
+                      <div class="col-xs-6 match-name">
+                        <h3>PCW #1</h3>
                       </div>
                     <!-- / Third Row -->
                   </div>
@@ -308,14 +331,14 @@
             <div class="row">
               <div class="col-xs-12 lineup-section">
                 <!-- Heading Section -->
-                  <div class="col-xs-12 heading-section">
+                  <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
                     <h1>Lineup</h1>
                   </div>
                 <!-- / Heading Section -->
                 <!-- Lineup Player #1 -->
-                  <div class="col-xs-12 col-md-2 lineup-player">
+                  <div class="col-xs-12 col-md-2 col-md-offset-1 lineup-player">
                     <div class="lineup-avatar">
-                      <img src="http://192.168.0.104/vongg/temp/mateuszv1mpardomurad.jpg" alt="Mateusz V1MPAR Domurad Avatar" class="img-circle" />
+                      <img src="http://192.168.0.104/vongg/temp/mateuszv1mpardomurad.png" alt="Mateusz V1MPAR Domurad Avatar" class="img-circle" />
                     </div>
                     <div class="lineup-name">
                       <h1>Mateusz "V1MPAR" Domurad</h1>
@@ -327,11 +350,11 @@
                       <h3>16 years old</h3>
                     </div>
                   </div>
-                <!-- / Lineup Player -->
+                <!-- / Lineup Player #1 -->
                 <!-- Lineup Player #2 -->
                   <div class="col-xs-12 col-md-2 lineup-player">
                     <div class="lineup-avatar">
-                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.png" alt="Lineup Avatar" class="img-circle" />
                     </div>
                     <div class="lineup-name">
                       <h1>Name "Nick" Name</h1>
@@ -343,11 +366,11 @@
                       <h3>X years old</h3>
                     </div>
                   </div>
-                <!-- / Lineup Player -->
+                <!-- / Lineup Player #2 -->
                 <!-- Lineup Player #3 -->
                   <div class="col-xs-12 col-md-2 lineup-player">
                     <div class="lineup-avatar">
-                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.png" alt="Lineup Avatar" class="img-circle" />
                     </div>
                     <div class="lineup-name">
                       <h1>Name "Nick" Name</h1>
@@ -359,11 +382,11 @@
                       <h3>X years old</h3>
                     </div>
                   </div>
-                <!-- / Lineup Player -->
+                <!-- / Lineup Player #3 -->
                 <!-- Lineup Player #4 -->
                   <div class="col-xs-12 col-md-2 lineup-player">
                     <div class="lineup-avatar">
-                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.png" alt="Lineup Avatar" class="img-circle" />
                     </div>
                     <div class="lineup-name">
                       <h1>Name "Nick" Name</h1>
@@ -375,11 +398,11 @@
                       <h3>X years old</h3>
                     </div>
                   </div>
-                <!-- / Lineup Player -->
+                <!-- / Lineup Player #4 -->
                 <!-- Lineup Player #5 -->
                   <div class="col-xs-12 col-md-2 lineup-player">
                     <div class="lineup-avatar">
-                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.png" alt="Lineup Avatar" class="img-circle" />
                     </div>
                     <div class="lineup-name">
                       <h1>Name "Nick" Name</h1>
@@ -391,23 +414,7 @@
                       <h3>X years old</h3>
                     </div>
                   </div>
-                <!-- / Lineup Player -->
-                <!-- Lineup Player #6 -->
-                  <div class="col-xs-12 col-md-2 lineup-player">
-                    <div class="lineup-avatar">
-                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
-                    </div>
-                    <div class="lineup-name">
-                      <h1>Name "Nick" Name</h1>
-                    </div>
-                    <div class="lineup-role">
-                      <h2>Roles</h2>
-                    </div>
-                    <div class="lineup-years">
-                      <h3>X years old</h3>
-                    </div>
-                  </div>
-                <!-- / Lineup Player -->
+                <!-- / Lineup Player #5 -->
               </div>
             </div>
           </div>
@@ -428,17 +435,17 @@
             <div class="row">
               <div class="col-xs-12 videos-twitter-section">
                 <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-6 heading-section">
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 heading-section">
                     <h1>Newest Video</h1>
                   </div>
                 <!-- / Heading Section -->
                 <!-- Heading Section (hidden XS and SM) -->
-                <div class="col-xs-12 col-md-6 hidden-xs hidden-sm heading-section">
+                <div class="col-xs-12 col-md-offset-1 col-md-5 hidden-xs hidden-sm heading-section">
                   <h1>Twitter</h1>
                 </div>
                 <!-- / Heading Section (hidden XS and SM) -->
                 <!-- Newest Video -->
-                  <div class="col-xs-12 col-md-6 newest-video">
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 newest-video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/DS9k88dchXY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                   </div>
                 <!-- / Newest Video -->
@@ -451,7 +458,7 @@
                   </div>
                 <!-- / Heading Section (visible XS and SM) -->
                 <!-- Twitter Posts (visible XS and SM) -->
-                  <div class="col-xs-12 col-md-6 twitter-posts visible-xs visible-sm"></div>
+                  <div class="col-xs-12 col-md-5 twitter-posts visible-xs visible-sm"></div>
                 <!-- / Twitter Posts (visible XS and SM) -->
               </div>
             </div>
@@ -463,7 +470,7 @@
             <div class="row">
               <div class="col-xs-12 big-footer">
                 <!-- BIG Footer Item #1 -->
-                  <div class="col-xs-12 col-md-4 big-footer-about-us">
+                  <div class="col-xs-12 col-md-3 col-md-offset-1 big-footer-about-us">
                     <!-- Heading Footer -->
                       <div class="col-xs-12 heading-footer">
                         <h1>About Us</h1>
@@ -474,19 +481,23 @@
                 <!-- / BIG Footer Item #1 -->
                 <!-- BIG Footer Item #2 -->
                   <div class="col-xs-12 col-md-4 big-footer-logo-socials">
-                    <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
+                    <div class="col-xs-12 big-footer-logo">
+                      <img src="http://192.168.0.104/vongg/frontend/img/logo-white.png" alt="Team VoN" />
+                    </div>
                     <!-- Social Items -->
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-sign-in"></i>
-                      </div>
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-facebook"></i>
-                      </div>
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-youtube-play"></i>
-                      </div>
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-twitter"></i>
+                      <div class="col-xs-12 big-footer-socials">
+                        <div class="col-xs-offset-4 col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-sign-in"></i></a>
+                        </div>
+                        <div class="col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+                        <div class="col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                        <div class="col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
                       </div>
                     <!-- / Social Items -->
                   </div>
@@ -522,6 +533,10 @@
 
       </div>
     <!-- / Main Container -->
+
+    <!-- JS Scripts -->
+      <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
+    <!-- / JS Scripts -->
 
   </body>
 </html>
