@@ -1,6 +1,6 @@
 <?php
 
-  class NotFoundModel extends Model {
+  class AjaxModel extends Model {
 
     function __construct() {
 
