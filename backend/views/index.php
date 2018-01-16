@@ -86,6 +86,72 @@
           </div>
         <!-- / Header Bar -->
 
+        <!-- News Section -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 news-section">
+                <!-- Newest or Pinned News -->
+                  <div class="col-xs-12 col-md-6 news-item">
+                    <div class="news-info">
+                      <div class="news-title">
+                        <h1>Title</h1>
+                      </div>
+                      <div class="col-xs-3 news-tags">
+                        <i class="fa fa-tags"></i><span>Tag</span>
+                      </div>
+                      <div class="col-xs-3 news-date">
+                        <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
+                      </div>
+                      <div class="col-xs-3 news-time">
+                        <i class="fa fa-clock-o"></i><span>04:14</span>
+                      </div>
+                      <div class="col-xs-3 news-pinned">
+                        <i class="fa fa-thumb-tack"></i><span>Pinned</span>
+                      </div>
+                    </div>
+                  </div>
+                <!-- / Newest or Pinned News -->
+                <!-- Second News -->
+                  <div class="col-xs-12 col-md-6 news-item">
+                    <div class="news-info">
+                      <div class="news-title">
+                        <h1>Title</h1>
+                      </div>
+                      <div class="col-xs-4 news-tags">
+                        <i class="fa fa-tags"></i><span>Tag</span>
+                      </div>
+                      <div class="col-xs-4 news-date">
+                        <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
+                      </div>
+                      <div class="col-xs-4 news-time">
+                        <i class="fa fa-clock-o"></i><span>04:16</span>
+                      </div>
+                    </div>
+                  </div>
+                <!-- / Second News -->
+                <!-- Third News -->
+                  <div class="col-xs-12 col-md-6 news-item">
+                    <div class="news-info">
+                      <div class="news-title">
+                        <h1>Title</h1>
+                      </div>
+                      <div class="col-xs-4 news-tags">
+                        <i class="fa fa-tags"></i><span>Tag</span>
+                      </div>
+                      <div class="col-xs-4 news-date">
+                        <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
+                      </div>
+                      <div class="col-xs-4 news-time">
+                        <i class="fa fa-clock-o"></i><span>04:17</span>
+                      </div>
+                    </div>
+                  </div>
+                <!-- / Third News -->
+              </div>
+            </div>
+          </div>
+        <!-- / News Section -->
+
       </div>
     <!-- / Main Container -->
 
