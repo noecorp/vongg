@@ -435,17 +435,17 @@
             <div class="row">
               <div class="col-xs-12 videos-twitter-section">
                 <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-6 heading-section">
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 heading-section">
                     <h1>Newest Video</h1>
                   </div>
                 <!-- / Heading Section -->
                 <!-- Heading Section (hidden XS and SM) -->
-                <div class="col-xs-12 col-md-6 hidden-xs hidden-sm heading-section">
+                <div class="col-xs-12 col-md-offset-1 col-md-5 hidden-xs hidden-sm heading-section">
                   <h1>Twitter</h1>
                 </div>
                 <!-- / Heading Section (hidden XS and SM) -->
                 <!-- Newest Video -->
-                  <div class="col-xs-12 col-md-6 newest-video">
+                  <div class="col-xs-12 col-md-offset-1 col-md-5 newest-video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/DS9k88dchXY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                   </div>
                 <!-- / Newest Video -->
@@ -458,7 +458,7 @@
                   </div>
                 <!-- / Heading Section (visible XS and SM) -->
                 <!-- Twitter Posts (visible XS and SM) -->
-                  <div class="col-xs-12 col-md-6 twitter-posts visible-xs visible-sm"></div>
+                  <div class="col-xs-12 col-md-5 twitter-posts visible-xs visible-sm"></div>
                 <!-- / Twitter Posts (visible XS and SM) -->
               </div>
             </div>
@@ -470,7 +470,7 @@
             <div class="row">
               <div class="col-xs-12 big-footer">
                 <!-- BIG Footer Item #1 -->
-                  <div class="col-xs-12 col-md-4 big-footer-about-us">
+                  <div class="col-xs-12 col-md-3 col-md-offset-1 big-footer-about-us">
                     <!-- Heading Footer -->
                       <div class="col-xs-12 heading-footer">
                         <h1>About Us</h1>
@@ -481,19 +481,23 @@
                 <!-- / BIG Footer Item #1 -->
                 <!-- BIG Footer Item #2 -->
                   <div class="col-xs-12 col-md-4 big-footer-logo-socials">
-                    <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
+                    <div class="col-xs-12 big-footer-logo">
+                      <img src="http://192.168.0.104/vongg/frontend/img/logo-white.png" alt="Team VoN" />
+                    </div>
                     <!-- Social Items -->
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-sign-in"></i>
-                      </div>
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-facebook"></i>
-                      </div>
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-youtube-play"></i>
-                      </div>
-                      <div class="col-xs-3 social-item">
-                        <i class="fa fa-twitter"></i>
+                      <div class="col-xs-12 big-footer-socials">
+                        <div class="col-xs-offset-4 col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-sign-in"></i></a>
+                        </div>
+                        <div class="col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+                        <div class="col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                        <div class="col-xs-1 big-footer-social">
+                          <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
                       </div>
                     <!-- / Social Items -->
                   </div>
