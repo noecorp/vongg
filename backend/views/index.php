@@ -59,6 +59,33 @@
           </div>
         <!-- / Social Bar -->
 
+        <!-- Header Bar -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 header-bar">
+                <!-- Header Logo -->
+                  <div class="col-xs-12 col-md-4 header-logo">
+                    <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
+                  </div>
+                <!-- / Header Logo -->
+                <!-- Header Menu -->
+                  <div class="col-xs-12 col-md-8 header-menu">
+                    <ul class="header-menu-list">
+                      <li>Home</li>
+                      <li>News</li>
+                      <li>Players</li>
+                      <li>Partners</li>
+                      <li>Matches</li>
+                      <li>About Us</li>
+                      <li>Contact</li>
+                    </ul>
+                  </div>
+                <!-- / Header Menu -->
+              </div>
+            </div>
+          </div>
+        <!-- / Header Bar -->
+
       </div>
     <!-- / Main Container -->
 
