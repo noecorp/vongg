@@ -457,6 +457,58 @@
           </div>
         <!-- / Videos & Twitter Section -->
 
+        <!-- BIG Footer -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 big-footer">
+                <!-- BIG Footer Item #1 -->
+                  <div class="col-xs-12 col-md-4 big-footer-about-us">
+                    <!-- Heading Footer -->
+                      <div class="col-xs-12 heading-footer">
+                        <h1>About Us</h1>
+                      </div>
+                    <!-- / Heading Footer -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                <!-- / BIG Footer Item #1 -->
+                <!-- BIG Footer Item #2 -->
+                  <div class="col-xs-12 col-md-4 big-footer-logo-socials">
+                    <img src="http://192.168.0.104/vongg/frontend/img/logo.png" alt="Team VoN" />
+                    <!-- Social Items -->
+                      <div class="col-xs-3 social-item">
+                        <i class="fa fa-sign-in"></i>
+                      </div>
+                      <div class="col-xs-3 social-item">
+                        <i class="fa fa-facebook"></i>
+                      </div>
+                      <div class="col-xs-3 social-item">
+                        <i class="fa fa-youtube-play"></i>
+                      </div>
+                      <div class="col-xs-3 social-item">
+                        <i class="fa fa-twitter"></i>
+                      </div>
+                    <!-- / Social Items -->
+                  </div>
+                <!-- / BIG Footer Item #2 -->
+                <!-- BIG Footer Item #3 -->
+                  <div class="col-xs-12 col-md-4 big-footer-contact">
+                    <!-- Heading Footer -->
+                      <div class="col-xs-12 heading-footer">
+                        <h1>Contact</h1>
+                      </div>
+                    <!-- / Heading Footer -->
+                    <p>
+                      <strong>Team VoN</strong><br />
+                      Mateusz Domurad<br /><br />
+                      <strong>E-mail:</strong> mdomurad@vongg.com
+                    </p>
+                  </div>
+                <!-- / BIG Footer Item #3 -->
+              </div>
+            </div>
+          </div>
+        <!-- / BIG Footer -->
+
       </div>
     <!-- / Main Container -->
 
