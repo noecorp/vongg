@@ -152,6 +152,156 @@
           </div>
         <!-- / News Section -->
 
+        <!-- Matches Section -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 matches-section">
+                <!-- Heading Section -->
+                  <div class="col-xs-12 heading-section">
+                    <h1>Matches</h1>
+                  </div>
+                <!-- / Heading Section -->
+                <!-- Match Item #1 -->
+                  <div class="col-xs-12 col-md-3 match-item">
+                    <!-- First Row -->
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
+                      </div>
+                      <div class="col-xs-4 match-score">
+                        <h1>16-0</h1>
+                      </div>
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/pcw.png" alt="Team PCW" class="img-circle" />
+                      </div>
+                    <!-- / First Row -->
+                    <!-- Second Row -->
+                      <div class="col-xs-6 match-date">
+                        <h2>16 January 2018</h2>
+                      </div>
+                      <div class="col-xs-6 match-time">
+                        <h2>04:47</h2>
+                      </div>
+                    <!-- / Second Row -->
+                    <!-- Third Row -->
+                      <div class="col-xs-4 match-map">
+                        <h3>de_mirage</h3>
+                      </div>
+                      <div class="col-xs-4 match-type">
+                        <h3>PCW</h3>
+                      </div>
+                      <div class="col-xs-4 match-name">
+                        <h3>PCW #1</h3>
+                      </div>
+                    <!-- / Third Row -->
+                  </div>
+                <!-- / Match Item #1 -->
+                <!-- Match Item #2 -->
+                  <div class="col-xs-12 col-md-3 match-item">
+                    <!-- First Row -->
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
+                      </div>
+                      <div class="col-xs-4 match-score">
+                        <h1>16-0</h1>
+                      </div>
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/pcw.png" alt="Team PCW" class="img-circle" />
+                      </div>
+                    <!-- / First Row -->
+                    <!-- Second Row -->
+                      <div class="col-xs-6 match-date">
+                        <h2>16 January 2018</h2>
+                      </div>
+                      <div class="col-xs-6 match-time">
+                        <h2>04:48</h2>
+                      </div>
+                    <!-- / Second Row -->
+                    <!-- Third Row -->
+                      <div class="col-xs-4 match-map">
+                        <h3>de_mirage</h3>
+                      </div>
+                      <div class="col-xs-4 match-type">
+                        <h3>PCW</h3>
+                      </div>
+                      <div class="col-xs-4 match-name">
+                        <h3>PCW #2</h3>
+                      </div>
+                    <!-- / Third Row -->
+                  </div>
+                <!-- / Match Item #2 -->
+                <!-- Match Item #3 -->
+                  <div class="col-xs-12 col-md-3 match-item">
+                    <!-- First Row -->
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
+                      </div>
+                      <div class="col-xs-4 match-score">
+                        <h1>16-0</h1>
+                      </div>
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/pcw.png" alt="Team PCW" class="img-circle" />
+                      </div>
+                    <!-- / First Row -->
+                    <!-- Second Row -->
+                      <div class="col-xs-6 match-date">
+                        <h2>16 January 2018</h2>
+                      </div>
+                      <div class="col-xs-6 match-time">
+                        <h2>04:49</h2>
+                      </div>
+                    <!-- / Second Row -->
+                    <!-- Third Row -->
+                      <div class="col-xs-4 match-map">
+                        <h3>de_mirage</h3>
+                      </div>
+                      <div class="col-xs-4 match-type">
+                        <h3>PCW</h3>
+                      </div>
+                      <div class="col-xs-4 match-name">
+                        <h3>PCW #1</h3>
+                      </div>
+                    <!-- / Third Row -->
+                  </div>
+                <!-- / Match Item #3 -->
+                <!-- Match Item #4 -->
+                  <div class="col-xs-12 col-md-3 match-item">
+                    <!-- First Row -->
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/von.png" alt="Team VoN" class="img-circle" />
+                      </div>
+                      <div class="col-xs-4 match-score">
+                        <h1>16-0</h1>
+                      </div>
+                      <div class="col-xs-4 match-avatar">
+                        <img src="http://192.168.0.104/vongg/temp/pcw.png" alt="Team PCW" class="img-circle" />
+                      </div>
+                    <!-- / First Row -->
+                    <!-- Second Row -->
+                      <div class="col-xs-6 match-date">
+                        <h2>16 January 2018</h2>
+                      </div>
+                      <div class="col-xs-6 match-time">
+                        <h2>04:50</h2>
+                      </div>
+                    <!-- / Second Row -->
+                    <!-- Third Row -->
+                      <div class="col-xs-4 match-map">
+                        <h3>de_mirage</h3>
+                      </div>
+                      <div class="col-xs-4 match-type">
+                        <h3>PCW</h3>
+                      </div>
+                      <div class="col-xs-4 match-name">
+                        <h3>PCW #4</h3>
+                      </div>
+                    <!-- / Third Row -->
+                  </div>
+                <!-- / Match Item #4 -->
+              </div>
+            </div>
+          </div>
+        <!-- / Matches Section -->
+
       </div>
     <!-- / Main Container -->
 
