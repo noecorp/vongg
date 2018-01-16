@@ -302,6 +302,116 @@
           </div>
         <!-- / Matches Section -->
 
+        <!-- Lineup Section -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 lineup-section">
+                <!-- Heading Section -->
+                  <div class="col-xs-12 heading-section">
+                    <h1>Lineup</h1>
+                  </div>
+                <!-- / Heading Section -->
+                <!-- Lineup Player #1 -->
+                  <div class="col-xs-12 col-md-2 lineup-player">
+                    <div class="lineup-avatar">
+                      <img src="http://192.168.0.104/vongg/temp/mateuszv1mpardomurad.jpg" alt="Mateusz V1MPAR Domurad Avatar" class="img-circle" />
+                    </div>
+                    <div class="lineup-name">
+                      <h1>Mateusz "V1MPAR" Domurad</h1>
+                    </div>
+                    <div class="lineup-role">
+                      <h2>Captain / SNIPER / RIFLER</h2>
+                    </div>
+                    <div class="lineup-years">
+                      <h3>16 years old</h3>
+                    </div>
+                  </div>
+                <!-- / Lineup Player -->
+                <!-- Lineup Player #2 -->
+                  <div class="col-xs-12 col-md-2 lineup-player">
+                    <div class="lineup-avatar">
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                    </div>
+                    <div class="lineup-name">
+                      <h1>Name "Nick" Name</h1>
+                    </div>
+                    <div class="lineup-role">
+                      <h2>Roles</h2>
+                    </div>
+                    <div class="lineup-years">
+                      <h3>X years old</h3>
+                    </div>
+                  </div>
+                <!-- / Lineup Player -->
+                <!-- Lineup Player #3 -->
+                  <div class="col-xs-12 col-md-2 lineup-player">
+                    <div class="lineup-avatar">
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                    </div>
+                    <div class="lineup-name">
+                      <h1>Name "Nick" Name</h1>
+                    </div>
+                    <div class="lineup-role">
+                      <h2>Roles</h2>
+                    </div>
+                    <div class="lineup-years">
+                      <h3>X years old</h3>
+                    </div>
+                  </div>
+                <!-- / Lineup Player -->
+                <!-- Lineup Player #4 -->
+                  <div class="col-xs-12 col-md-2 lineup-player">
+                    <div class="lineup-avatar">
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                    </div>
+                    <div class="lineup-name">
+                      <h1>Name "Nick" Name</h1>
+                    </div>
+                    <div class="lineup-role">
+                      <h2>Roles</h2>
+                    </div>
+                    <div class="lineup-years">
+                      <h3>X years old</h3>
+                    </div>
+                  </div>
+                <!-- / Lineup Player -->
+                <!-- Lineup Player #5 -->
+                  <div class="col-xs-12 col-md-2 lineup-player">
+                    <div class="lineup-avatar">
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                    </div>
+                    <div class="lineup-name">
+                      <h1>Name "Nick" Name</h1>
+                    </div>
+                    <div class="lineup-role">
+                      <h2>Roles</h2>
+                    </div>
+                    <div class="lineup-years">
+                      <h3>X years old</h3>
+                    </div>
+                  </div>
+                <!-- / Lineup Player -->
+                <!-- Lineup Player #6 -->
+                  <div class="col-xs-12 col-md-2 lineup-player">
+                    <div class="lineup-avatar">
+                      <img src="http://192.168.0.104/vongg/temp/lineup-avatar.jpg" alt="Lineup Avatar" class="img-circle" />
+                    </div>
+                    <div class="lineup-name">
+                      <h1>Name "Nick" Name</h1>
+                    </div>
+                    <div class="lineup-role">
+                      <h2>Roles</h2>
+                    </div>
+                    <div class="lineup-years">
+                      <h3>X years old</h3>
+                    </div>
+                  </div>
+                <!-- / Lineup Player -->
+              </div>
+            </div>
+          </div>
+        <!-- / Lineup Section -->
+
       </div>
     <!-- / Main Container -->
 
