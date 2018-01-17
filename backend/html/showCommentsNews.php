@@ -23,10 +23,14 @@
                       <?php
 
                         if ( $model -> newsCommentsCount > 0 ) {
+                        $commentNumber = 0;
                         for ( $i = 0; $i < $model -> newsCommentsCount; $i++ ) {
-
+                        $commentNumber++;
                       ?>
                       <div class="col-xs-12 single-news-comment-item" id="comment<?= $i; ?>">
+                        <div class="col-xs-12 single-news-comment-heading">
+                          <h3>#<?= $commentNumber; ?></h3>
+                        </div>
                       <?php
 
                         if ( $model -> newsCommentReply[$i] == true ) {
@@ -55,6 +59,23 @@
                           <div class="col-xs-12 single-news-comment-heading display-none" id="comment-content-current<?= $model -> newsCommentID[$i]; ?>">
                             <h3>Current comment</h3>
                           </div>
+                          <?php
+
+                            if ( $model -> newsCommentReply[$i] == true ) {
+
+                              $reply = unserialize($model -> newsCommentReply[$i]);
+
+                              $selectNewsSaysCommentQuery = $this -> model -> db -> prepare('SELECT * FROM comments WHERE id = :id');
+                              $selectNewsSaysCommentQuery->bindValue(':id', $reply['comment'], PDO::PARAM_STR);
+                              $selectNewsSaysCommentQuery->execute();
+                              $saysComment = $selectNewsSaysCommentQuery->fetch();
+
+                          ?>
+                            <div class="col-xs-12 single-news-comment-heading">
+                              <h3><?= $reply['user']; ?> says...</h3>
+                              <p><i><?= implode(' ', array_slice(explode(' ', $saysComment['content']), 0, 25)); ?>...</i></p>
+                            </div>
+                          <?php } ?>
                           <p id="comment-content<?= $model -> newsCommentID[$i]; ?>"><?= $model -> newsCommentContent[$i]; ?></p>
                           <button type="button" class="btn btn-default pull-right display-none" style="margin-bottom: 20px;" id="show-current-comment<?= $model -> newsCommentID[$i]; ?>" showEditedContent="<?= $model -> newsCommentID[$i]; ?>" name="showCurrentComment">Show only current comment</button>
                           <form method="post" action="http://192.168.0.104/vongg/form/editComment" class="col-xs-12 single-news-reply-add" id="editComment<?= $model -> newsCommentID[$i]; ?>">
