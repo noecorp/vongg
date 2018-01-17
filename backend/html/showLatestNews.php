@@ -7,7 +7,8 @@
 ?>
 
                 <!-- Single News Last Articles -->
-                  <div class="col-xs-12 dark">
+                <div class="row dark">
+                  <div class="col-xs-12">
                     <div class="col-xs-12 col-md-6 col-md-offset-3">
                       <div class="single-news-last-articles">
                         <!-- Heading Section -->
@@ -39,4 +40,5 @@
                       </div>
                     </div>
                   </div>
+                </div>
                 <!-- / Single News Last Articles -->

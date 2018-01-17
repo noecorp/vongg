@@ -18,8 +18,8 @@
 
           if ( $selectNewsPinnedQuery->rowCount() == 1 ) {
 
-            $pinned = 1;
             $newsPinned = $selectNewsPinnedQuery->fetch();
+            $this -> pinned = 1;
             $this -> newsImgPinned = $newsPinned['img'];
             $this -> newsLinkPinned = $newsPinned['link'];
             $this -> newsTitlePinned = $newsPinned['title'];
@@ -31,10 +31,46 @@
 
       }
 
+      public function showNewsNewestVariables() {
+
+        $selectNewsNewestQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC LIMIT 1');
+        $selectNewsNewestQuery->execute();
+
+          if ( $selectNewsNewestQuery->rowCount() == 1 ) {
+
+            $newsNewest = $selectNewsNewestQuery->fetch();
+            $this -> newest = 1;
+            $this -> newsImgNewest = $newsNewest['img'];
+            $this -> newsLinkNewest = $newsNewest['link'];
+            $this -> newsTitleNewest = $newsNewest['title'];
+            $this -> newsTagNewest = $newsNewest['tag'];
+            $this -> newsDateNewest = $newsNewest['date'];
+            $this -> newsTimeNewest = $newsNewest['time'];
+
+          }
+
+      }
+
       public function showNewsVariables() {
 
         $selectNewsQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC');
         $selectNewsQuery->execute();
+
+        $selectNewsNewestQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC LIMIT 1');
+        $selectNewsNewestQuery->execute();
+
+          if ( $selectNewsNewestQuery->rowCount() == 1 ) {
+
+            $newsNewest = $selectNewsNewestQuery->fetch();
+            $this -> newest = 1;
+            $this -> newsImgNewest = $newsNewest['img'];
+            $this -> newsLinkNewest = $newsNewest['link'];
+            $this -> newsTitleNewest = $newsNewest['title'];
+            $this -> newsTagNewest = $newsNewest['tag'];
+            $this -> newsDateNewest = $newsNewest['date'];
+            $this -> newsTimeNewest = $newsNewest['time'];
+
+          }
 
           if ( $selectNewsQuery->rowCount() > 0 ) {
 
@@ -78,7 +114,7 @@
 
           if ( $selectNewsPinnedQuery->rowCount() == 1 ) {
 
-            $pinned = 1;
+            $this -> pinned = 1;
             $newsPinned = $selectNewsPinnedQuery->fetch();
             $this -> newsImgPinned = $newsPinned['img'];
             $this -> newsLinkPinned = $newsPinned['link'];
@@ -89,10 +125,47 @@
 
             require_once 'http://192.168.0.104/vongg/showHTML/showNewsPinned';
 
+          } else {
+
+            $selectNewsNewestQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC LIMIT 1');
+            $selectNewsNewestQuery->execute();
+
+              if ( $selectNewsNewestQuery->rowCount() == 1 ) {
+
+                $newsNewest = $selectNewsNewestQuery->fetch();
+                $this -> pinned = 0;
+                $this -> newest = 1;
+                $this -> newsImgNewest = $newsNewest['img'];
+                $this -> newsLinkNewest = $newsNewest['link'];
+                $this -> newsTitleNewest = $newsNewest['title'];
+                $this -> newsTagNewest = $newsNewest['tag'];
+                $this -> newsDateNewest = $newsNewest['date'];
+                $this -> newsTimeNewest = $newsNewest['time'];
+
+              }
+
+              require_once 'http://192.168.0.104/vongg/showHTML/showNewsPinned';
+
           }
 
-        $selectNewsQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC LIMIT 3');
+        $selectNewsQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC');
         $selectNewsQuery->execute();
+
+        $selectNewsNewestQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC LIMIT 1');
+        $selectNewsNewestQuery->execute();
+
+          if ( $selectNewsNewestQuery->rowCount() == 1 ) {
+
+            $newsNewest = $selectNewsNewestQuery->fetch();
+            $this -> newest = 1;
+            $this -> newsImgNewest = $newsNewest['img'];
+            $this -> newsLinkNewest = $newsNewest['link'];
+            $this -> newsTitleNewest = $newsNewest['title'];
+            $this -> newsTagNewest = $newsNewest['tag'];
+            $this -> newsDateNewest = $newsNewest['date'];
+            $this -> newsTimeNewest = $newsNewest['time'];
+
+          }
 
           if ( $selectNewsQuery->rowCount() > 0 ) {
 

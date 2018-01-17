@@ -8,6 +8,7 @@
 
                 <!-- Single News Item -->
                 <!-- Single News TOP -->
+                <div class="row">
                   <div class="col-xs-12 col-md-6 col-md-offset-3 single-news-item" style="background: url('http://192.168.0.104/vongg/temp/<?= $model -> newsImg; ?>'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
                     <div class="col-xs-12 single-news-box">
                       <div class="col-xs-12 single-news-title">
@@ -80,4 +81,5 @@
                       </div>
                     </div>
                   </div>
+                </div>
                 <!-- / Single News Footer -->

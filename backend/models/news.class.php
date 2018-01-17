@@ -266,5 +266,61 @@
 
     }
 
+    public function showNewsListVariables() {
+
+      $selectNewsListQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC');
+      $selectNewsListQuery->execute();
+
+      $this -> newsListCount = $selectNewsListQuery->rowCount();
+
+      if ( $this -> newsListCount > 0 ) {
+
+        $listImg = [];
+        $listLink = [];
+        $listTitle = [];
+
+        while ( $list = $selectNewsListQuery->fetch() ) {
+          array_push($listImg, $list['img']);
+          array_push($listLink, $list['link']);
+          array_push($listTitle, $list['title']);
+        }
+
+        $this -> newsListImg = $listImg;
+        $this -> newsListLink = $listLink;
+        $this -> newsListTitle = $listTitle;
+
+      }
+
+    }
+
+    public function showNewsList() {
+
+      $selectNewsListQuery = $this -> db -> prepare('SELECT * FROM news ORDER BY id DESC');
+      $selectNewsListQuery->execute();
+
+      $this -> newsListCount = $selectNewsListQuery->rowCount();
+
+      if ( $this -> newsListCount > 0 ) {
+
+        $listImg = [];
+        $listLink = [];
+        $listTitle = [];
+
+        while ( $list = $selectNewsListQuery->fetch() ) {
+          array_push($listImg, $list['img']);
+          array_push($listLink, $list['link']);
+          array_push($listTitle, $list['title']);
+        }
+
+        $this -> listImg = $listImg;
+        $this -> listLink = $listLink;
+        $this -> listTitle = $listTitle;
+
+        include 'http://192.168.0.104/vongg/showHTML/showNewsList';
+
+      }
+
+    }
+
 
   }
