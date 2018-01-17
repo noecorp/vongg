@@ -4,12 +4,25 @@
 
     function __construct() {
 
-      $config = [
-        'host' => 'localhost',
-        'user' => 'root',
-        'pass' => '',
-        'db' => 'vongg'
-      ];
+      if ( ! isset($_COOKIE['lang']) || $_COOKIE['lang'] == 'en' ) {
+
+        $config = [
+          'host' => 'localhost',
+          'user' => 'root',
+          'pass' => '',
+          'db' => 'vongg'
+        ];
+
+      } else {
+
+        $config = [
+          'host' => 'localhost',
+          'user' => 'root',
+          'pass' => '',
+          'db' => 'vonggpl'
+        ];
+
+      }
 
       try {
 
