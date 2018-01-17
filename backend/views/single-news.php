@@ -213,7 +213,15 @@
     <!-- / Main Container -->
 
     <!-- JS Scripts -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- Bootstrap -->
+      <script src="http://192.168.0.104/vongg/frontend/js/bootstrap-run.js?<?= time(); ?>"></script> <!-- Bootstrap Components Run -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
+      <script src="http://192.168.0.104/vongg/frontend/js/reply-comment.js?<?= time(); ?>"></script> <!-- Reply Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/edit-comment.js?<?= time(); ?>"></script> <!-- Edit Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/delete-comment.js?<?= time(); ?>"></script> <!-- Delete Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/voteup-comment.js?<?= time(); ?>"></script> <!-- Vote Up Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/votedown-comment.js?<?= time(); ?>"></script> <!-- Vote Down Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/old-comment.js?<?= time(); ?>"></script> <!-- Show Edited Comment -->
     <!-- / JS Scripts -->
 
   </body>
