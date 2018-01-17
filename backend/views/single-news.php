@@ -126,36 +126,8 @@
             <div class="row">
               <div class="col-xs-12 single-news-section">
                 <?php $model -> showSingleNews($this -> newsLink); ?>
-                <!-- Single News Item -->
-                  <div class="col-xs-12 col-md-6 col-md-offset-3 single-news-item" style="background: url('http://192.168.0.104/vongg/temp/mirage-smokes.jpg'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
-                    <div class="col-xs-12 single-news-box">
-                      <div class="col-xs-12 single-news-title">
-                        <h1>STANDARD SMOKES ON MIRAGE - GUIDES</h1>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-md-6 col-md-offset-3">
-                    <div class="col-xs-12 single-news-info">
-                      <div class="col-xs-3 single-news-tags">
-                        <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/guide">Guide</a></span>
-                      </div>
-                      <div class="col-xs-3 single-news-date">
-                        <i class="fa fa-calendar-o"></i><span>16 January 2018</span>
-                      </div>
-                      <div class="col-xs-3 single-news-time">
-                        <i class="fa fa-clock-o"></i><span>20:15</span>
-                      </div>
-                      <div class="col-xs-3 single-news-pinned">
-                        <i class="fa fa-thumb-tack"></i><span>Pinned</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-md-6 col-md-offset-3">
-                    <div class="single-news-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                  </div>
-                <!-- / Single News Item -->
+                <?php $model -> showLatestNews($this -> newsLink); ?>
+                <?php $model -> showCommentsNews($this -> newsLink); ?>
               </div>
             </div>
           </div>
