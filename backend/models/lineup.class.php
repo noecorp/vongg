@@ -63,6 +63,8 @@
 
         $lineupSlogan = [];
         $lineupInfo = [];
+        $lineupAchievmentsTeam = [];
+        $lineupAchievmentsIndividual = [];
         $lineupSettings = [];
         $lineupAvatar = [];
         $lineupSocials = [];
@@ -72,6 +74,8 @@
             array_push($lineupSlogan, $lineup['slogan']);
             array_push($lineupInfo, $lineup['info']);
             array_push($lineupSettings, $lineup['settings']);
+            array_push($lineupAchievmentsTeam, $lineup['achievmentsteam']);
+            array_push($lineupAchievmentsIndividual, $lineup['achievmentsindividual']);
             array_push($lineupAvatar, $lineup['avatar']);
             array_push($lineupSocials, $lineup['socials']);
             array_push($lineupFunFact, $lineup['funfact']);
@@ -79,6 +83,8 @@
 
         $this -> lineupPlayerInfoSlogan = $lineupSlogan;
         $this -> lineupPlayerInfoInfo = $lineupInfo;
+        $this -> lineupPlayerInfoAchievmentsTeam = $lineupAchievmentsTeam;
+        $this -> lineupPlayerInfoAchievmentsIndividual = $lineupAchievmentsIndividual;
         $this -> lineupPlayerInfoSettings = $lineupSettings;
         $this -> lineupPlayerInfoAvatar = $lineupAvatar;
         $this -> lineupPlayerInfoSocials = $lineupSocials;
@@ -97,6 +103,8 @@
 
         $lineupSlogan = [];
         $lineupInfo = [];
+        $lineupAchievmentsTeam = [];
+        $lineupAchievmentsIndividual = [];
         $lineupSettings = [];
         $lineupAvatar = [];
         $lineupSocials = [];
@@ -106,6 +114,8 @@
             array_push($lineupSlogan, $lineup['slogan']);
             array_push($lineupInfo, $lineup['info']);
             array_push($lineupSettings, $lineup['settings']);
+            array_push($lineupAchievmentsTeam, $lineup['achievmentsteam']);
+            array_push($lineupAchievmentsIndividual, $lineup['achievmentsindividual']);
             array_push($lineupAvatar, $lineup['avatar']);
             array_push($lineupSocials, $lineup['socials']);
             array_push($lineupFunFact, $lineup['funfact']);
@@ -113,12 +123,62 @@
 
         $this -> lineupPlayerInfoSlogan = $lineupSlogan;
         $this -> lineupPlayerInfoInfo = $lineupInfo;
+        $this -> lineupPlayerInfoAchievmentsTeam = $lineupAchievmentsTeam;
+        $this -> lineupPlayerInfoAchievmentsIndividual = $lineupAchievmentsIndividual;
         $this -> lineupPlayerInfoSettings = $lineupSettings;
         $this -> lineupPlayerInfoAvatar = $lineupAvatar;
         $this -> lineupPlayerInfoSocials = $lineupSocials;
         $this -> lineupPlayerInfoFunFact = $lineupFunFact;
 
         include 'http://192.168.0.104/vongg/showHTML/showLineupPlayersInfo';
+
+      }
+
+    }
+
+    public function showAllPlayersVariables() {
+
+      $selectAllPlayersQuery = $this -> db -> prepare('SELECT * FROM lineup ORDER BY id ASC');
+      $selectAllPlayersQuery->execute();
+
+      if ( $selectAllPlayersQuery->rowCount() > 0 ) {
+
+        $playersAvatar = [];
+        $playersName = [];
+
+        while ( $players = $selectAllPlayersQuery->fetch() ) {
+            array_push($playersAvatar, $players['avatar']);
+            array_push($playersName, $players['name']);
+        }
+
+        $this -> allPlayersCount = $selectAllPlayersQuery->rowCount();
+        $this -> playersPlayerAvatar = $playersAvatar;
+        $this -> playersPlayerName = $playersName;
+
+      }
+
+    }
+
+    public function showAllPlayers() {
+
+      $selectAllPlayersQuery = $this -> db -> prepare('SELECT * FROM lineup ORDER BY id ASC');
+      $selectAllPlayersQuery->execute();
+
+      if ( $selectAllPlayersQuery->rowCount() > 0 ) {
+
+        $playersAvatar = [];
+        $playersName = [];
+
+        while ( $players = $selectAllPlayersQuery->fetch() ) {
+            array_push($playersAvatar, $players['avatar']);
+            array_push($playersName, $players['name']);
+        }
+
+        $this -> allPlayersCount = $selectAllPlayersQuery->rowCount();
+        $this -> playersPlayerAvatar = $playersAvatar;
+        $this -> playersPlayerName = $playersName;
+
+        include 'http://192.168.0.104/vongg/showHTML/showAllPlayers';
 
       }
 

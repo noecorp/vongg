@@ -219,6 +219,7 @@
             $matchesTeamAvatar1 = [];
             $matchesTeam2 = [];
             $matchesTeamAvatar2 = [];
+            $matchesTeams = [];
             $matchesMaps = [];
             $matchesType = [];
             $matchesFormat = [];
@@ -237,6 +238,7 @@
                 array_push($matchesTeamAvatar1, $match['teamavatar1']);
                 array_push($matchesTeam2, $match['team2']);
                 array_push($matchesTeamAvatar2, $match['teamavatar2']);
+                array_push($matchesTeams, $match['teams']);
                 array_push($matchesMaps, $match['maps']);
                 array_push($matchesType, $match['type']);
                 array_push($matchesFormat, $match['format']);
@@ -254,6 +256,7 @@
             $this -> matchesTeamAvatar1 = $matchesTeamAvatar1;
             $this -> matchesTeam2 = $matchesTeam2;
             $this -> matchesTeamAvatar2 = $matchesTeamAvatar2;
+            $this -> matchesTeams = $matchesTeams;
             $this -> matchesMaps = $matchesMaps;
             $this -> matchesType = $matchesType;
             $this -> matchesFormat = $matchesFormat;
@@ -279,6 +282,7 @@
           $matchesTeamAvatar1 = [];
           $matchesTeam2 = [];
           $matchesTeamAvatar2 = [];
+          $matchesTeams = [];
           $matchesMaps = [];
           $matchesType = [];
           $matchesFormat = [];
@@ -297,6 +301,7 @@
               array_push($matchesTeamAvatar1, $match['teamavatar1']);
               array_push($matchesTeam2, $match['team2']);
               array_push($matchesTeamAvatar2, $match['teamavatar2']);
+              array_push($matchesTeams, $match['teams']);
               array_push($matchesMaps, $match['maps']);
               array_push($matchesType, $match['type']);
               array_push($matchesFormat, $match['format']);
@@ -314,6 +319,7 @@
           $this -> matchesTeamAvatar1 = $matchesTeamAvatar1;
           $this -> matchesTeam2 = $matchesTeam2;
           $this -> matchesTeamAvatar2 = $matchesTeamAvatar2;
+          $this -> matchesTeams = $matchesTeams;
           $this -> matchesMaps = $matchesMaps;
           $this -> matchesType = $matchesType;
           $this -> matchesFormat = $matchesFormat;

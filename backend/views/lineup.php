@@ -89,6 +89,7 @@
                       <li class="current-item"><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg/achievments">Achievments</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">About Us</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
                       <span id="en" class="change-lang lang-active">EN</span> <span id="pl" class="change-lang">PL</span>
@@ -106,6 +107,7 @@
                       <li class="current-item"><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
+                      <li><a href="http://192.168.0.104/vongg/achievments">Osiągnięcia</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">O nas</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
                       <span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang lang-active">PL</span>
@@ -129,6 +131,9 @@
                 </div>
                 <!-- / Heading Section -->
                 <?php $model -> showLineupPlayers(); ?>
+                <div class="col-xs-12 col-md-10 col-md-offset-1" style="padding-top: 20px;">
+                  <a class="all-stories-link pull-right" href="http://192.168.0.104/vongg/lineup/all">See the stories of all players</a>
+                </div>
                 <?php $model -> showLineupPlayersInfo(); ?>
               </div>
             </div>

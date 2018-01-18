@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'backend/models/news.class.php';
-  $model = new NewsModel();
+  require_once 'backend/models/lineup.class.php';
+  $model = new LineupModel();
 
   $model -> showPartnersVariables();
 
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: <?= $this -> pageTitle; ?></title>
+    <title>Team VoN :: Lineup</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -85,8 +85,8 @@
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
+                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
                       <li><a href="http://192.168.0.104/vongg/achievments">Achievments</a></li>
@@ -103,8 +103,8 @@
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
+                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
                       <li><a href="http://192.168.0.104/vongg/achievments">Osiągnięcia</a></li>
@@ -121,21 +121,20 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Separator -->
-          <div class="header-separator"></div>
-        <!-- / Separator -->
-
-        <!-- Single News Section -->
+        <!-- Lineup Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 single-news-section">
-                <?php $model -> showSingleNews($this -> newsLink); ?>
-                <?php $model -> showLatestNews($this -> newsLink); ?>
-                <?php $model -> showCommentsNews($this -> newsLink); ?>
+              <div class="col-xs-12 lineup-section">
+                <!-- Heading Section -->
+                <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
+                  <h1>All players in the team's history</h1>
+                </div>
+                <!-- / Heading Section -->
+                <?php $model -> showAllPlayers(); ?>
               </div>
             </div>
           </div>
-        <!-- / Single News Section -->
+        <!-- / Lineup Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">
@@ -235,12 +234,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- Bootstrap -->
       <script src="http://192.168.0.104/vongg/frontend/js/bootstrap-run.js?<?= time(); ?>"></script> <!-- Bootstrap Components Run -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
-      <script src="http://192.168.0.104/vongg/frontend/js/reply-comment.js?<?= time(); ?>"></script> <!-- Reply Comment -->
-      <script src="http://192.168.0.104/vongg/frontend/js/edit-comment.js?<?= time(); ?>"></script> <!-- Edit Comment -->
-      <script src="http://192.168.0.104/vongg/frontend/js/delete-comment.js?<?= time(); ?>"></script> <!-- Delete Comment -->
-      <script src="http://192.168.0.104/vongg/frontend/js/voteup-comment.js?<?= time(); ?>"></script> <!-- Vote Up Comment -->
-      <script src="http://192.168.0.104/vongg/frontend/js/votedown-comment.js?<?= time(); ?>"></script> <!-- Vote Down Comment -->
-      <script src="http://192.168.0.104/vongg/frontend/js/old-comment.js?<?= time(); ?>"></script> <!-- Show Edited Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/show-player-info.js?<?= time(); ?>"></script> <!-- Show Player Info -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
       <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->

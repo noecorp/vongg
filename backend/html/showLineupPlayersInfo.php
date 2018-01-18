@@ -5,14 +5,19 @@
   $model -> showLineupPlayersInfoVariables();
 
   $info0 = unserialize($model -> lineupPlayerInfoInfo[0]);
+  $achievmentsTeam0 = unserialize($model -> lineupPlayerInfoAchievmentsTeam[0]);
+  $achievmentsIndividual0 = unserialize($model -> lineupPlayerInfoAchievmentsIndividual[0]);
   $settings0 = unserialize($model -> lineupPlayerInfoSettings[0]);
   $social0 = unserialize($model -> lineupPlayerInfoSocials[0]);
   $funfact0 = $model -> lineupPlayerInfoFunFact[0];
 
   $info1 = unserialize($model -> lineupPlayerInfoInfo[1]);
+  $achievmentsTeam1 = unserialize($model -> lineupPlayerInfoAchievmentsTeam[1]);
+  $achievmentsIndividual1 = unserialize($model -> lineupPlayerInfoAchievmentsIndividual[1]);
   $settings1 = unserialize($model -> lineupPlayerInfoSettings[1]);
   $social1 = unserialize($model -> lineupPlayerInfoSocials[1]);
   $funfact1 = $model -> lineupPlayerInfoFunFact[1];
+
 
 ?>
 
@@ -29,6 +34,44 @@
                         <h3>Role<span><?= $info0['role']; ?></span></h3>
                         <h3>Age<span><?= $info0['years']; ?></span></h3>
                         <h3>From<span><?= $info0['from']; ?></span></h3>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                        <div class="lineup-player-info-achievments">
+                          <h1>Achievments with team</h1>
+                          <?php for ( $i = 1; $i <= $achievmentsTeam0['count']; $i++ ) { ?>
+                            <?php if ( $achievmentsTeam0['achievmentPlace' . $i] ==  1 ) { ?>
+                              <h3><span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> <?= $achievmentsTeam0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsTeam0['achievmentPlace' . $i] ==  2 ) { ?>
+                              <h3><span class="second-place"><i class="fa fa-trophy"></i><span class="strong-place">2nd place on</span> <?= $achievmentsTeam0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsTeam0['achievmentPlace' . $i] ==  3 ) { ?>
+                              <h3><span class="third-place"><i class="fa fa-trophy"></i><span class="strong-place">3rd place on</span> <?= $achievmentsTeam0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsTeam0['achievmentPlace' . $i] > 3 ) { ?>
+                              <h3><span class="place"><i class="fa fa-trophy"></i><span class="strong-place"><?= $achievmentsTeam0['achievmentPlace' . $i]; ?>th place on</span> <?= $achievmentsTeam0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                        <div class="lineup-player-info-achievments">
+                          <h1>Achievments Individual</h1>
+                          <?php for ( $i = 1; $i <= $achievmentsIndividual0['count']; $i++ ) { ?>
+                            <?php if ( $achievmentsIndividual0['achievmentPlace' . $i] ==  1 ) { ?>
+                              <h3><span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> <?= $achievmentsIndividual0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsIndividual0['achievmentPlace' . $i] ==  2 ) { ?>
+                              <h3><span class="second-place"><i class="fa fa-trophy"></i><span class="strong-place">2nd place on</span> <?= $achievmentsIndividual0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsIndividual0['achievmentPlace' . $i] ==  3 ) { ?>
+                              <h3><span class="third-place"><i class="fa fa-trophy"></i><span class="strong-place">3rd place on</span> <?= $achievmentsIndividual0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsIndividual0['achievmentPlace' . $i] > 3 ) { ?>
+                              <h3><span class="place"><i class="fa fa-trophy"></i><span class="strong-place"><?= $achievmentsIndividual0['achievmentPlace' . $i]; ?>th place on</span> <?= $achievmentsIndividual0['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
                       </div>
                       <div class="lineup-player-info-game-settings">
                         <h1>In-game settings</h1>
@@ -97,6 +140,44 @@
                         <h3>Role<span><?= $info1['role']; ?></span></h3>
                         <h3>Age<span><?= $info1['years']; ?></span></h3>
                         <h3>From<span><?= $info1['from']; ?></span></h3>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                        <div class="lineup-player-info-achievments">
+                          <h1>Achievments with team</h1>
+                          <?php for ( $i = 1; $i <= $achievmentsTeam1['count']; $i++ ) { ?>
+                            <?php if ( $achievmentsTeam1['achievmentPlace' . $i] ==  1 ) { ?>
+                              <h3><span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> <?= $achievmentsTeam1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsTeam1['achievmentPlace' . $i] ==  2 ) { ?>
+                              <h3><span class="second-place"><i class="fa fa-trophy"></i><span class="strong-place">2nd place on</span> <?= $achievmentsTeam1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsTeam1['achievmentPlace' . $i] ==  3 ) { ?>
+                              <h3><span class="third-place"><i class="fa fa-trophy"></i><span class="strong-place">3rd place on</span> <?= $achievmentsTeam1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsTeam1['achievmentPlace' . $i] > 3 ) { ?>
+                              <h3><span class="place"><i class="fa fa-trophy"></i><span class="strong-place"><?= $achievmentsTeam1['achievmentPlace' . $i]; ?>th place on</span> <?= $achievmentsTeam1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                        <div class="lineup-player-info-achievments">
+                          <h1>Achievments Individual</h1>
+                          <?php for ( $i = 1; $i <= $achievmentsIndividual1['count']; $i++ ) { ?>
+                            <?php if ( $achievmentsIndividual1['achievmentPlace' . $i] ==  1 ) { ?>
+                              <h3><span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> <?= $achievmentsIndividual1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsIndividual1['achievmentPlace' . $i] ==  2 ) { ?>
+                              <h3><span class="second-place"><i class="fa fa-trophy"></i><span class="strong-place">2nd place on</span> <?= $achievmentsIndividual1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsIndividual1['achievmentPlace' . $i] ==  3 ) { ?>
+                              <h3><span class="third-place"><i class="fa fa-trophy"></i><span class="strong-place">3rd place on</span> <?= $achievmentsIndividual1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                            <?php if ( $achievmentsIndividual1['achievmentPlace' . $i] > 3 ) { ?>
+                              <h3><span class="place"><i class="fa fa-trophy"></i><span class="strong-place"><?= $achievmentsIndividual1['achievmentPlace' . $i]; ?>th place on</span> <?= $achievmentsIndividual1['achievmentContent' . $i]; ?></span></h3>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
                       </div>
                       <div class="lineup-player-info-game-settings">
                         <h1>In-game settings</h1>
