@@ -50,7 +50,7 @@
 
         <!-- Social Bar -->
           <div class="container-fluid">
-            <div class="row social-bar">
+            <div class="row social-bar" id="social-bar">
               <div class="col-xs-12 col-md-offset-10 col-md-2">
                 <!-- Social Items -->
                   <div class="col-xs-3 social-item">
@@ -216,6 +216,14 @@
           </div>
         <!-- / Videos & Twitter Section -->
 
+        <!-- UP Circle Slide -->
+          <div class="col-xs-4 col-xs-offset-4 circle-slide-item">
+            <span class="circle-slide" id="slide-up">
+              <i class="fa fa-chevron-up"></i>
+            </span>
+          </div>
+        <!-- / UP Circle Slide -->
+
         <!-- BIG Footer -->
           <div class="container-fluid">
             <div class="row">
@@ -289,6 +297,7 @@
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
+      <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->
     <!-- / JS Scripts -->
 
   </body>

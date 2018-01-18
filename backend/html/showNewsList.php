@@ -15,6 +15,15 @@
                         <div class="col-xs-12 single-news-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
                         </div>
+                        <div class="col-xs-4 news-list-tags">
+                          <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/<?php print_r($model -> newsListTag[$index]); ?>"><?php print_r($model -> newsListTag[$index]); ?></a></span>
+                        </div>
+                        <div class="col-xs-4 news-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-4 news-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
+                        </div>
                       </div>
                     </div>
                     <?php $index++; ?>
@@ -22,6 +31,15 @@
                       <div class="col-xs-12 single-news-last-article-box">
                         <div class="col-xs-12 single-news-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
+                        </div>
+                        <div class="col-xs-4 news-list-tags">
+                          <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/<?php print_r($model -> newsListTag[$index]); ?>"><?php print_r($model -> newsListTag[$index]); ?></a></span>
+                        </div>
+                        <div class="col-xs-4 news-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-4 news-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
                         </div>
                       </div>
                     </div>
@@ -40,6 +58,15 @@
                         <div class="col-xs-12 single-news-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
                         </div>
+                        <div class="col-xs-4 news-list-tags">
+                          <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/<?php print_r($model -> newsListTag[$index]); ?>"><?php print_r($model -> newsListTag[$index]); ?></a></span>
+                        </div>
+                        <div class="col-xs-4 news-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-4 news-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
+                        </div>
                       </div>
                     </div>
                     <?php $index++; ?>
@@ -47,6 +74,15 @@
                       <div class="col-xs-12 single-news-last-article-box">
                         <div class="col-xs-12 single-news-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
+                        </div>
+                        <div class="col-xs-4 news-list-tags">
+                          <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/<?php print_r($model -> newsListTag[$index]); ?>"><?php print_r($model -> newsListTag[$index]); ?></a></span>
+                        </div>
+                        <div class="col-xs-4 news-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-4 news-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
                         </div>
                       </div>
                     </div>
@@ -58,6 +94,15 @@
                       <div class="col-xs-12 single-news-last-article-box">
                         <div class="col-xs-12 single-news-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
+                        </div>
+                        <div class="col-xs-4 news-list-tags">
+                          <i class="fa fa-tags"></i><span><a href="http://192.168.0.104/vongg/tag/<?php print_r($model -> newsListTag[$index]); ?>"><?php print_r($model -> newsListTag[$index]); ?></a></span>
+                        </div>
+                        <div class="col-xs-4 news-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-4 news-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
                         </div>
                       </div>
                     </div>

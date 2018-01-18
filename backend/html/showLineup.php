@@ -18,7 +18,7 @@
                       <h2><?php print_r($model -> lineupRole[0]); ?></h2>
                     </div>
                     <div class="lineup-years">
-                      <h3><?php print_r($model -> lineupYears[0]); ?> years old</h3>
+                      <h3>Age <?php print_r($model -> lineupYears[0]); ?></h3>
                     </div>
                   </div>
                 <!-- / Lineup Player #1 -->
@@ -34,7 +34,7 @@
                       <h2><?php print_r($model -> lineupRole[1]); ?></h2>
                     </div>
                     <div class="lineup-years">
-                      <h3><?php print_r($model -> lineupYears[1]); ?> years old</h3>
+                      <h3>Age <?php print_r($model -> lineupYears[1]); ?></h3>
                     </div>
                   </div>
                 <!-- / Lineup Player #2 -->
@@ -50,7 +50,7 @@
                       <h2><?php print_r($model -> lineupRole[2]); ?></h2>
                     </div>
                     <div class="lineup-years">
-                      <h3><?php print_r($model -> lineupYears[2]); ?> years old</h3>
+                      <h3>Age <?php print_r($model -> lineupYears[2]); ?></h3>
                     </div>
                   </div>
                 <!-- / Lineup Player #3 -->
@@ -66,7 +66,7 @@
                       <h2><?php print_r($model -> lineupRole[3]); ?></h2>
                     </div>
                     <div class="lineup-years">
-                      <h3><?php print_r($model -> lineupYears[3]); ?> years old</h3>
+                      <h3>Age <?php print_r($model -> lineupYears[3]); ?></h3>
                     </div>
                   </div>
                 <!-- / Lineup Player #4 -->
@@ -82,7 +82,7 @@
                       <h2><?php print_r($model -> lineupRole[4]); ?></h2>
                     </div>
                     <div class="lineup-years">
-                      <h3><?php print_r($model -> lineupYears[4]); ?> years old</h3>
+                      <h3>Age <?php print_r($model -> lineupYears[4]); ?></h3>
                     </div>
                   </div>
                 <!-- / Lineup Player #5 -->

@@ -123,6 +123,11 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-12 matches-section">
+                <!-- Heading Section -->
+                <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
+                  <h1>Matches</h1>
+                </div>
+                <!-- / Heading Section -->
                 <?php $model -> showAllMatches(); ?>
               </div>
             </div>
@@ -163,6 +168,13 @@
                 <!-- / BIG Footer Item #1 -->
                 <!-- BIG Footer Item #2 -->
                   <div class="col-xs-12 col-md-4 big-footer-logo-socials">
+                    <!-- UP Circle Slide -->
+                      <div class="col-xs-4 col-xs-offset-4 circle-slide-item">
+                        <span class="circle-slide" id="slide-up">
+                          <i class="fa fa-chevron-up"></i>
+                        </span>
+                      </div>
+                    <!-- / UP Circle Slide -->
                     <div class="col-xs-12 big-footer-logo">
                       <img src="http://192.168.0.104/vongg/frontend/img/logo-white.png" alt="Team VoN" />
                     </div>
@@ -222,6 +234,7 @@
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
+      <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->
     <!-- / JS Scripts -->
 
   </body>

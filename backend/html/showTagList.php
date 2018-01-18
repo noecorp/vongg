@@ -15,6 +15,12 @@
                         <div class="col-xs-12 single-tags-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
                         </div>
+                        <div class="col-xs-6 news-tag-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
+                        </div>
                       </div>
                     </div>
                     <?php $index++; ?>
@@ -22,6 +28,12 @@
                       <div class="col-xs-12 single-tags-last-article-box">
                         <div class="col-xs-12 single-tags-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
                         </div>
                       </div>
                     </div>
@@ -40,6 +52,12 @@
                         <div class="col-xs-12 single-tags-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
                         </div>
+                        <div class="col-xs-6 news-tag-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
+                        </div>
                       </div>
                     </div>
                     <?php $index++; ?>
@@ -47,6 +65,12 @@
                       <div class="col-xs-12 single-tags-last-article-box">
                         <div class="col-xs-12 single-tags-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
                         </div>
                       </div>
                     </div>
@@ -58,6 +82,12 @@
                       <div class="col-xs-12 single-tags-last-article-box">
                         <div class="col-xs-12 single-tags-latest-title">
                           <h1><a href="http://192.168.0.104/vongg/news/<?= $model -> newsListLink[$index]; ?>"><?= $model -> newsListTitle[$index]; ?></a></h1>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-date">
+                          <i class="fa fa-calendar-o"></i><span><?php print_r($model -> newsListDate[$index]); ?></span>
+                        </div>
+                        <div class="col-xs-6 news-tag-list-time">
+                          <i class="fa fa-clock-o"></i><span><?php print_r($model -> newsListTime[$index]); ?></span>
                         </div>
                       </div>
                     </div>
