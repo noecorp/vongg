@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'backend/models/matches.class.php';
-  $model = new MatchesModel();
+  require_once 'backend/models/about.class.php';
+  $model = new AboutModel();
 
   $model -> showPartnersVariables();
 
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: Matches</title>
+    <title>Team VoN :: About Us</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -88,8 +88,8 @@
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
-                      <li><a href="http://192.168.0.104/vongg/about">About Us</a></li>
+                      <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/about">About Us</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
                       <span id="en" class="change-lang lang-active">EN</span> <span id="pl" class="change-lang">PL</span>
                     </ul>
@@ -105,8 +105,8 @@
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
-                      <li><a href="http://192.168.0.104/vongg/about">O nas</a></li>
+                      <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/about">O nas</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
                       <span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang lang-active">PL</span>
                     </ul>
@@ -119,15 +119,28 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Partners Section -->
+        <!-- About Us Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 matches-section">
-                <?php $model -> showAllMatches(); ?>
+              <div class="col-xs-12 about-us-section">
+                <div class="col-xs-12 col-md-8 col-md-offset-2 about-us-items">
+                  <div class="col-xs-12 about-us-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+
+                  <div class="about-us-separator"></div>
+
+                  <div class="col-xs-12 col-md-6 about-us-logo">
+                    <img src="http://192.168.0.104/vongg/temp/von.png" />
+                  </div>
+                  <div class="col-xs-12 col-md-6 about-us-content about-us-logo-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        <!-- / Partners Section -->
+        <!-- / About Us Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">

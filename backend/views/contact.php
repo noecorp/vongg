@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'backend/models/matches.class.php';
-  $model = new MatchesModel();
+  require_once 'backend/models/about.class.php';
+  $model = new AboutModel();
 
   $model -> showPartnersVariables();
 
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: Matches</title>
+    <title>Team VoN :: Contact</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -88,9 +88,9 @@
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">About Us</a></li>
-                      <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
                       <span id="en" class="change-lang lang-active">EN</span> <span id="pl" class="change-lang">PL</span>
                     </ul>
                     <span id="slide-line"></span>
@@ -105,9 +105,9 @@
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
+                      <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">O nas</a></li>
-                      <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
                       <span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang lang-active">PL</span>
                     </ul>
                     <span id="slide-line"></span>
@@ -119,15 +119,90 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Partners Section -->
+        <!-- Contact Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 matches-section">
-                <?php $model -> showAllMatches(); ?>
+              <div class="col-xs-12 contact-section">
+                <!-- Heading Section -->
+                <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
+                  <h1>Contact</h1>
+                </div>
+                <!-- / Heading Section -->
+                <div class="col-xs-12 col-md-8 col-md-offset-2 contact-items">
+
+                  <div class="contact-separator"></div>
+
+                  <div class="col-xs-12 col-md-6 contact-content">
+                    <div class="col-xs-12 contact-logo">
+                      <img src="http://192.168.0.104/vongg/temp/von.png" />
+                    </div>
+                    <div class="col-xs-11 col-xs-offset-1 contact-header">
+                      <h1><span>Owner Team & Website</span></h1>
+                    </div>
+                    <div class="col-xs-11 col-xs-offset-1 contact-name">
+                      <h1>Mateusz Domurad</h1>
+                    </div>
+                    <div class="col-xs-11 col-xs-offset-1 contact-mail">
+                      <h1>mdomurad@vongg.com</h1>
+                    </div>
+                    <div class="col-xs-11 col-xs-offset-1 contact-header">
+                      <h1><span>Author Website</span></h1>
+                    </div>
+                    <div class="col-xs-11 col-xs-offset-1 contact-name">
+                      <h1>V1MPAR Dev</h1>
+                    </div>
+                    <div class="col-xs-11 col-xs-offset-1 contact-mail">
+                      <h1>contact@vimpardev.com</h1>
+                    </div>
+                  </div>
+                  <form method="post" action="http://192.168.0.104/vongg/form/sendMessage" class="col-xs-12 col-md-6 contact-form">
+                    <div class="col-xs-12 contact-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <select class="form-control contact-select" name="type" id="sel1">
+                          <option value="General">General Inquiries</option>
+                          <option value="Business">Business (Sponsor / Partnership)</option>
+                          <option value="Team/Player">Team/Player Application</option>
+                          <option value="Press/Media">Press/Media</option>
+                          <option value="Website">Website</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <div class="col-xs-12 contact-header">
+                        <h1>Name</h1>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control contact-input" name="name" id="">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <div class="col-xs-12 contact-header">
+                        <h1>Email</h1>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control contact-input" name="email" id="">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                      <div class="col-xs-12 contact-header">
+                        <h1>Your Message</h1>
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control contact-textarea" rows="5" name="message" id=""></textarea>
+                      </div>
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="submit" class="btn btn-default contact-send pull-right" name="sendMessage">Send Message</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        <!-- / Partners Section -->
+        <!-- / Contact Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">
