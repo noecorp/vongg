@@ -3,6 +3,8 @@
   require_once 'backend/models/lineup.class.php';
   $model = new LineupModel();
 
+  $model -> showPartnersVariables();
+
 ?>
 
 <!DOCTYPE html>
@@ -132,7 +134,15 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-12 partners-bar">
-                <h1>We currently don't have any partners. <a href="#">You are interested in?</a></h1>
+                <?php if ( $model -> partnersCount != 0 ) { ?>
+                  <?php for ( $i = 0; $i < $model -> partnersCount; $i++ ) { ?>
+                    <div class="slide">
+                      <img src="http://192.168.0.104/vongg/temp/<?= $model -> partnerLogo[$i]; ?>" class="img-responsive" />
+                    </div>
+                  <?php } ?>
+                <?php } else { ?>
+                  <h1>We currently don't have any partners. <a href="http://192.168.0.104/vongg/contact">You are interested in?</a></h1>
+                <?php } ?>
               </div>
             </div>
           </div>
@@ -211,7 +221,9 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- Bootstrap -->
       <script src="http://192.168.0.104/vongg/frontend/js/bootstrap-run.js?<?= time(); ?>"></script> <!-- Bootstrap Components Run -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
-      <script src="http://192.168.0.104/vongg/frontend/js/show-player-info.js?<?= time(); ?>"></script> <!-- Reply Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/show-player-info.js?<?= time(); ?>"></script> <!-- Show Player Info -->
+      <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
+      <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
     <!-- / JS Scripts -->
 
   </body>

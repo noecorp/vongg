@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'backend/models/tag.class.php';
-  $model = new TagModel();
+  require_once 'backend/models/partners.class.php';
+  $model = new PartnersModel();
 
   $model -> showPartnersVariables();
 
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: <?= $this -> pageTitle; ?></title>
+    <title>Team VoN :: Partners></title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -85,9 +85,9 @@
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
-                      <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
                       <li><a href="http://192.168.0.104/vongg/aboutus">About Us</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
@@ -102,9 +102,9 @@
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
-                      <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
                       <li><a href="http://192.168.0.104/vongg/aboutus">O nas</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
@@ -119,15 +119,18 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Tags Section -->
+        <!-- Partners Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 tags-section">
-                <?php $model -> showTagNewsList($this -> tag); ?>
+              <div class="col-xs-12 partners-section">
+                <div class="col-xs-12 col-md-8 col-md-offset-2 partner-become">
+                  <a href="http://192.168.0.104/vongg/contact"><h1><span>Become a partner for Team VoN</span></h1></a>
+                </div>
+                <?php $model -> showPartners(); ?>
               </div>
             </div>
           </div>
-        <!-- / Tags Section -->
+        <!-- / Partners Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">

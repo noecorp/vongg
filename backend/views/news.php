@@ -3,6 +3,8 @@
   require_once 'backend/models/news.class.php';
   $model = new NewsModel();
 
+  $model -> showPartnersVariables();
+
 ?>
 
 <!DOCTYPE html>
@@ -131,7 +133,15 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-12 partners-bar">
-                <h1>We currently don't have any partners. <a href="#">You are interested in?</a></h1>
+                <?php if ( $model -> partnersCount != 0 ) { ?>
+                  <?php for ( $i = 0; $i < $model -> partnersCount; $i++ ) { ?>
+                    <div class="slide">
+                      <img src="http://192.168.0.104/vongg/temp/<?= $model -> partnerLogo[$i]; ?>" class="img-responsive" />
+                    </div>
+                  <?php } ?>
+                <?php } else { ?>
+                  <h1>We currently don't have any partners. <a href="http://192.168.0.104/vongg/contact">You are interested in?</a></h1>
+                <?php } ?>
               </div>
             </div>
           </div>
@@ -216,6 +226,8 @@
       <script src="http://192.168.0.104/vongg/frontend/js/voteup-comment.js?<?= time(); ?>"></script> <!-- Vote Up Comment -->
       <script src="http://192.168.0.104/vongg/frontend/js/votedown-comment.js?<?= time(); ?>"></script> <!-- Vote Down Comment -->
       <script src="http://192.168.0.104/vongg/frontend/js/old-comment.js?<?= time(); ?>"></script> <!-- Show Edited Comment -->
+      <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
+      <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
     <!-- / JS Scripts -->
 
   </body>
