@@ -15,6 +15,16 @@
   }
 }
 
+.match-team {
+  h1 {
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    color: @second-color;
+    font-size: 22px;
+  }
+}
+
 .match-score {
   height: 120px;
   margin: 0;
@@ -77,7 +87,20 @@
 }
 
 .match-type {
-  padding-top: 10px;
+  padding-top: 30px;
+  h3 {
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    color: @second-color;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.match-format {
+  padding-top: 30px;
   h3 {
     margin: 0;
     font-weight: 700;
@@ -90,7 +113,7 @@
 }
 
 .match-name {
-  padding-top: 10px;
+  .pad-top-bot(10px;20px);
   h3 {
     margin: 0;
     font-weight: 700;
@@ -100,4 +123,8 @@
     text-align: center;
     font-size: 18px;
   }
+}
+
+.matches-section-items {
+  .pad-top-bot(50px;50px);
 }

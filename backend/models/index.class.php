@@ -216,9 +216,12 @@
             $matchesMatchID = [];
             $matchesScore = [];
             $matchesTeam1 = [];
+            $matchesTeamAvatar1 = [];
             $matchesTeam2 = [];
-            $matchesMap = [];
+            $matchesTeamAvatar2 = [];
+            $matchesMaps = [];
             $matchesType = [];
+            $matchesFormat = [];
             $matchesName = [];
             $matchesDate = [];
             $matchesTime = [];
@@ -231,9 +234,12 @@
                 array_push($matchesMatchID, $match['matchID']);
                 array_push($matchesScore, $match['score']);
                 array_push($matchesTeam1, $match['team1']);
+                array_push($matchesTeamAvatar1, $match['teamavatar1']);
                 array_push($matchesTeam2, $match['team2']);
-                array_push($matchesMap, $match['map']);
+                array_push($matchesTeamAvatar2, $match['teamavatar2']);
+                array_push($matchesMaps, $match['maps']);
                 array_push($matchesType, $match['type']);
+                array_push($matchesFormat, $match['format']);
                 array_push($matchesName, $match['name']);
                 array_push($matchesDate, $match['date']);
                 array_push($matchesTime, $match['time']);
@@ -245,9 +251,12 @@
             $this -> matchesMatchID = $matchesMatchID;
             $this -> matchesScore = $matchesScore;
             $this -> matchesTeam1 = $matchesTeam1;
+            $this -> matchesTeamAvatar1 = $matchesTeamAvatar1;
             $this -> matchesTeam2 = $matchesTeam2;
-            $this -> matchesMap = $matchesMap;
+            $this -> matchesTeamAvatar2 = $matchesTeamAvatar2;
+            $this -> matchesMaps = $matchesMaps;
             $this -> matchesType = $matchesType;
+            $this -> matchesFormat = $matchesFormat;
             $this -> matchesName = $matchesName;
             $this -> matchesDate = $matchesDate;
             $this -> matchesTime = $matchesTime;
@@ -262,47 +271,56 @@
         $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches ORDER BY id DESC');
         $selectMatchesQuery->execute();
 
-          if ( $selectMatchesQuery->rowCount() > 0 ) {
+        if ( $selectMatchesQuery->rowCount() > 0 ) {
 
-            $matchesMatchID = [];
-            $matchesScore = [];
-            $matchesTeam1 = [];
-            $matchesTeam2 = [];
-            $matchesMap = [];
-            $matchesType = [];
-            $matchesName = [];
-            $matchesDate = [];
-            $matchesTime = [];
-            $matchesLink = [];
+          $matchesMatchID = [];
+          $matchesScore = [];
+          $matchesTeam1 = [];
+          $matchesTeamAvatar1 = [];
+          $matchesTeam2 = [];
+          $matchesTeamAvatar2 = [];
+          $matchesMaps = [];
+          $matchesType = [];
+          $matchesFormat = [];
+          $matchesName = [];
+          $matchesDate = [];
+          $matchesTime = [];
+          $matchesLink = [];
 
-            $matchesCount = 0;
+          $matchesCount = 0;
 
-            while ( $match = $selectMatchesQuery->fetch() ) {
-              if ( $matchesCount != 4 ) {
-                array_push($matchesMatchID, $match['matchID']);
-                array_push($matchesScore, $match['score']);
-                array_push($matchesTeam1, $match['team1']);
-                array_push($matchesTeam2, $match['team2']);
-                array_push($matchesMap, $match['map']);
-                array_push($matchesType, $match['type']);
-                array_push($matchesName, $match['name']);
-                array_push($matchesDate, $match['date']);
-                array_push($matchesTime, $match['time']);
-                array_push($matchesLink, $match['link']);
-                $matchesCount++;
-              }
+          while ( $match = $selectMatchesQuery->fetch() ) {
+            if ( $matchesCount != 4 ) {
+              array_push($matchesMatchID, $match['matchID']);
+              array_push($matchesScore, $match['score']);
+              array_push($matchesTeam1, $match['team1']);
+              array_push($matchesTeamAvatar1, $match['teamavatar1']);
+              array_push($matchesTeam2, $match['team2']);
+              array_push($matchesTeamAvatar2, $match['teamavatar2']);
+              array_push($matchesMaps, $match['maps']);
+              array_push($matchesType, $match['type']);
+              array_push($matchesFormat, $match['format']);
+              array_push($matchesName, $match['name']);
+              array_push($matchesDate, $match['date']);
+              array_push($matchesTime, $match['time']);
+              array_push($matchesLink, $match['link']);
+              $matchesCount++;
             }
+          }
 
-            $this -> matchesMatchID = $matchesMatchID;
-            $this -> matchesScore = $matchesScore;
-            $this -> matchesTeam1 = $matchesTeam1;
-            $this -> matchesTeam2 = $matchesTeam2;
-            $this -> matchesMap = $matchesMap;
-            $this -> matchesType = $matchesType;
-            $this -> matchesName = $matchesName;
-            $this -> matchesDate = $matchesDate;
-            $this -> matchesTime = $matchesTime;
-            $this -> matchesLink = $matchesLink;
+          $this -> matchesMatchID = $matchesMatchID;
+          $this -> matchesScore = $matchesScore;
+          $this -> matchesTeam1 = $matchesTeam1;
+          $this -> matchesTeamAvatar1 = $matchesTeamAvatar1;
+          $this -> matchesTeam2 = $matchesTeam2;
+          $this -> matchesTeamAvatar2 = $matchesTeamAvatar2;
+          $this -> matchesMaps = $matchesMaps;
+          $this -> matchesType = $matchesType;
+          $this -> matchesFormat = $matchesFormat;
+          $this -> matchesName = $matchesName;
+          $this -> matchesDate = $matchesDate;
+          $this -> matchesTime = $matchesTime;
+          $this -> matchesLink = $matchesLink;
 
             require_once 'http://192.168.0.104/vongg/showHTML/showMatches';
 
