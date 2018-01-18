@@ -3,6 +3,8 @@
   require_once 'backend/models/about.class.php';
   $model = new AboutModel();
 
+  $model -> showPartnersVariables();
+
 ?>
 
 <!DOCTYPE html>
@@ -83,11 +85,11 @@
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
-                      <li><a href="http://192.168.0.104/vongg/aboutus">About Us</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/about">About Us</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
                       <span id="en" class="change-lang lang-active">EN</span> <span id="pl" class="change-lang">PL</span>
                     </ul>
@@ -100,11 +102,11 @@
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
+                      <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
-                      <li><a href="http://192.168.0.104/vongg/aboutus">O nas</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/about">O nas</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
                       <span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang lang-active">PL</span>
                     </ul>
@@ -125,10 +127,13 @@
                   <div class="col-xs-12 about-us-content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
+
+                  <div class="about-us-separator"></div>
+
                   <div class="col-xs-12 col-md-6 about-us-logo">
-                    <img src="http://192.168.0.104/vongg/temp/logo.png" />
+                    <img src="http://192.168.0.104/vongg/temp/von.png" />
                   </div>
-                  <div class="col-xs-12 col-md-6 about-us-content">
+                  <div class="col-xs-12 col-md-6 about-us-content about-us-logo-content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
                 </div>
