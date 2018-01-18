@@ -84,7 +84,7 @@
                     <ul class="header-menu-list list-inline">
                       <li><a href="http://192.168.0.104/vongg">Home</a></li>
                       <li class="current-item"><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Players</a></li>
+                      <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
                       <li><a href="http://192.168.0.104/vongg/aboutus">About Us</a></li>

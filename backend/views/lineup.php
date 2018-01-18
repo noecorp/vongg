@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'backend/models/index.class.php';
-  $model = new IndexModel();
+  require_once 'backend/models/lineup.class.php';
+  $model = new LineupModel();
 
 ?>
 
@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: Home</title>
+    <title>Team VoN :: Lineup</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -82,9 +82,9 @@
                 <!-- Header Menu EN -->
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
-                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Home</a></li>
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
                       <li><a href="http://192.168.0.104/vongg/aboutus">About Us</a></li>
@@ -99,9 +99,9 @@
                 <!-- Header Menu PL -->
                   <div class="col-xs-12 col-md-7 header-menu" id="navigation">
                     <ul class="header-menu-list list-inline">
-                      <li class="current-item"><a href="http://192.168.0.104/vongg">Home</a></li>
+                      <li><a href="http://192.168.0.104/vongg">Home</a></li>
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
-                      <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
+                      <li class="current-item"><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
                       <li><a href="http://192.168.0.104/vongg/aboutus">O nas</a></li>
@@ -117,45 +117,12 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Separator -->
-          <div class="header-separator"></div>
-        <!-- / Separator -->
-
-        <!-- News Section -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 news-section">
-                <?php $model -> showNews(); ?>
-              </div>
-            </div>
-          </div>
-        <!-- / News Section -->
-
-        <!-- Matches Section -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 matches-section">
-                <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
-                    <h1>Matches</h1>
-                  </div>
-                <!-- / Heading Section -->
-                <?php $model -> showMatches(); ?>
-              </div>
-            </div>
-          </div>
-        <!-- / Matches Section -->
-
         <!-- Lineup Section -->
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-12 lineup-section">
-                <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
-                    <h1>Lineup</h1>
-                  </div>
-                <!-- / Heading Section -->
-                <?php $model -> showLineup(); ?>
+                <?php $model -> showLineupPlayers(); ?>
+                <?php $model -> showLineupPlayersInfo(); ?>
               </div>
             </div>
           </div>
@@ -170,41 +137,6 @@
             </div>
           </div>
         <!-- / Partners Bar -->
-
-        <!-- Videos & Twitter Section -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 videos-twitter-section">
-                <!-- Heading Section -->
-                  <div class="col-xs-12 col-md-offset-1 col-md-5 heading-section">
-                    <h1>Newest Video</h1>
-                  </div>
-                <!-- / Heading Section -->
-                <!-- Heading Section (hidden XS and SM) -->
-                <div class="col-xs-12 col-md-offset-1 col-md-5 hidden-xs hidden-sm heading-section">
-                  <h1>Twitter</h1>
-                </div>
-                <!-- / Heading Section (hidden XS and SM) -->
-                <!-- Newest Video -->
-                  <div class="col-xs-12 col-md-offset-1 col-md-5 newest-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DS9k88dchXY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                  </div>
-                <!-- / Newest Video -->
-                <!-- Twitter Posts (hidden XS and SM) -->
-                  <div class="col-xs-12 col-md-6 twitter-posts hidden-xs hidden-sm"></div>
-                <!-- / Twitter Posts (hidden XS and SM) -->
-                <!-- Heading Section (visible XS and SM) -->
-                  <div class="col-xs-12 col-md-6 visible-xs visible-sm heading-section">
-                    <h1>Twitter</h1>
-                  </div>
-                <!-- / Heading Section (visible XS and SM) -->
-                <!-- Twitter Posts (visible XS and SM) -->
-                  <div class="col-xs-12 col-md-5 twitter-posts visible-xs visible-sm"></div>
-                <!-- / Twitter Posts (visible XS and SM) -->
-              </div>
-            </div>
-          </div>
-        <!-- / Videos & Twitter Section -->
 
         <!-- BIG Footer -->
           <div class="container-fluid">
@@ -276,7 +208,10 @@
     <!-- / Main Container -->
 
     <!-- JS Scripts -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- Bootstrap -->
+      <script src="http://192.168.0.104/vongg/frontend/js/bootstrap-run.js?<?= time(); ?>"></script> <!-- Bootstrap Components Run -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
+      <script src="http://192.168.0.104/vongg/frontend/js/show-player-info.js?<?= time(); ?>"></script> <!-- Reply Comment -->
     <!-- / JS Scripts -->
 
   </body>
