@@ -184,6 +184,66 @@
 
     }
 
+    public function showPlayerProfileVariables($player) {
+
+      $this -> request = $_GET['url'];
+      $this -> request = rtrim($this -> request, '/');
+      $this -> params = explode("/", $this -> request);
+
+      $selectPlayerProfileQuery = $this -> db -> prepare('SELECT * FROM lineup WHERE name = :name ORDER BY id ASC');
+      $selectPlayerProfileQuery->bindValue(':name', $player, PDO::PARAM_STR);
+      $selectPlayerProfileQuery->execute();
+
+      if ( $selectPlayerProfileQuery->rowCount() > 0 ) {
+
+        $lineup = $selectPlayerProfileQuery->fetch();
+
+            $this -> lineupPlayerInfoFullName = $lineup['fullname'];
+            $this -> lineupPlayerInfoName = $lineup['name'];
+            $this -> lineupPlayerInfoSlogan = $lineup['slogan'];
+            $this -> lineupPlayerInfoInfo = $lineup['info'];
+            $this -> lineupPlayerInfoSettings = $lineup['settings'];
+            $this -> lineupPlayerInfoAchievmentsTeam = $lineup['achievmentsteam'];
+            $this -> lineupPlayerInfoAchievmentsIndividual = $lineup['achievmentsindividual'];
+            $this -> lineupPlayerInfoAvatar = $lineup['avatar'];
+            $this -> lineupPlayerInfoSocials = $lineup['socials'];
+            $this -> lineupPlayerInfoFunFact = $lineup['funfact'];
+
+      }
+
+    }
+
+    public function showPlayerProfile($player) {
+
+      $this -> request = $_GET['url'];
+      $this -> request = rtrim($this -> request, '/');
+      $this -> params = explode("/", $this -> request);
+
+      $selectPlayerProfileQuery = $this -> db -> prepare('SELECT * FROM lineup WHERE name = :name ORDER BY id ASC');
+      $selectPlayerProfileQuery->bindValue(':name', $player, PDO::PARAM_STR);
+      $selectPlayerProfileQuery->execute();
+
+      if ( $selectPlayerProfileQuery->rowCount() > 0 ) {
+
+        $lineup = $selectPlayerProfileQuery->fetch();
+
+            $this -> lineupPlayerInfoFullName = $lineup['fullname'];
+            $this -> lineupPlayerInfoName = $lineup['name'];
+            $this -> lineupPlayerInfoSlogan = $lineup['slogan'];
+            $this -> lineupPlayerInfoInfo = $lineup['info'];
+            $this -> lineupPlayerInfoSettings = $lineup['settings'];
+            $this -> lineupPlayerInfoAchievmentsTeam = $lineup['achievmentsteam'];
+            $this -> lineupPlayerInfoAchievmentsIndividual = $lineup['achievmentsindividual'];
+            $this -> lineupPlayerInfoAvatar = $lineup['avatar'];
+            $this -> lineupPlayerInfoSocials = $lineup['socials'];
+            $this -> lineupPlayerInfoFunFact = $lineup['funfact'];
+
+        include 'http://192.168.0.104/vongg/showHTML/showPlayerProfile?name=' . $player . '';
+
+      }
+
+    }
+
     public function showPartnersVariables() {
 
       $selectPartnersQuery = $this -> db -> prepare('SELECT * FROM partners ORDER BY id ASC');
