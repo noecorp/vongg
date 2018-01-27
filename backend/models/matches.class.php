@@ -38,10 +38,26 @@
 
     }
 
-    public function showAllMatchesVariables() {
+    public function showAllMatchesVariables($type = 'all', $content = null) {
 
-      $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches ORDER BY id DESC');
-      $selectMatchesQuery->execute();
+      if ( $type == 'all' && $content == null ) {
+
+        $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches ORDER BY id DESC');
+        $selectMatchesQuery->execute();
+
+      } elseif ( $type == 'type' && $content != null ) {
+
+        $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches WHERE type = :type ORDER BY id DESC');
+        $selectMatchesQuery->bindValue(':type', $content, PDO::PARAM_STR);
+        $selectMatchesQuery->execute();
+
+      } elseif ( $type == 'format' && $content != null ) {
+
+        $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches WHERE format = :format ORDER BY id DESC');
+        $selectMatchesQuery->bindValue(':format', $content, PDO::PARAM_STR);
+        $selectMatchesQuery->execute();
+
+      }
 
         if ( $selectMatchesQuery->rowCount() > 0 ) {
 
@@ -97,10 +113,28 @@
 
     }
 
-    public function showAllMatches() {
+    public function showAllMatches($type = 'all', $content = null) {
 
-      $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches ORDER BY id DESC');
-      $selectMatchesQuery->execute();
+      if ( $type == 'all' && $content == null ) {
+
+        $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches ORDER BY id DESC');
+        $selectMatchesQuery->execute();
+
+      } elseif ( $type == 'type' && $content != null ) {
+
+        $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches WHERE type = :type ORDER BY id DESC');
+        $selectMatchesQuery->bindValue(':type', $content, PDO::PARAM_STR);
+        $selectMatchesQuery->execute();
+
+      } elseif ( $type == 'format' && $content != null ) {
+
+        $selectMatchesQuery = $this -> db -> prepare('SELECT * FROM matches WHERE format = :format ORDER BY id DESC');
+        $selectMatchesQuery->bindValue(':format', $content, PDO::PARAM_STR);
+        $selectMatchesQuery->execute();
+
+      } else {
+        header('Location: http://192.168.0.104/vongg/notfound');
+      }
 
       if ( $selectMatchesQuery->rowCount() > 0 ) {
 
@@ -152,7 +186,7 @@
         $this -> matchesTime = $matchesTime;
         $this -> matchesLink = $matchesLink;
 
-          require_once 'http://192.168.0.104/vongg/showHTML/showAllMatches';
+          require_once 'http://192.168.0.104/vongg/showHTML/showAllMatches?type=' . $type . '&content=' . $content . '';
 
         }
 

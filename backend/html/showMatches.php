@@ -49,63 +49,6 @@
                         <h3><a href="http://192.168.0.104/vongg/matches/matchstats/<?= $model -> matchesLink[0]; ?>"><?php print_r($model -> matchesName[0]); ?></a></h3>
                       </div>
                     <!-- / Second Row -->
-                    <!-- Third Row -->
-                    <?php if ( $map0['mapCount'] == '1' ) { ?>
-                      <div class="col-xs-12 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink1']; ?>"><?= $map0['map1']; ?></a> (<?= $score0['scoreMap1']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map0['mapCount'] == '2' ) { ?>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink1']; ?>"><?= $map0['map1']; ?></a> (<?= $score0['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink2']; ?>"><?= $map0['map2']; ?></a> (<?= $score0['scoreMap2']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map0['mapCount'] == '3' ) { ?>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink1']; ?>"><?= $map0['map1']; ?></a> (<?= $score0['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink2']; ?>"><?= $map0['map2']; ?></a> (<?= $score0['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink3']; ?>"><?= $map0['map3']; ?></a> (<?= $score0['scoreMap3']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map0['mapCount'] == '4' ) { ?>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink1']; ?>"><?= $map0['map1']; ?></a> (<?= $score0['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink2']; ?>"><?= $map0['map2']; ?></a> (<?= $score0['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink3']; ?>"><?= $map0['map3']; ?></a> (<?= $score0['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink4']; ?>"><?= $map0['map4']; ?></a> (<?= $score0['scoreMap4']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map0['mapCount'] == '5' ) { ?>
-                      <div class="col-xs-2 col-xs-offset-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink1']; ?>"><?= $map0['map1']; ?></a> (<?= $score0['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink2']; ?>"><?= $map0['map2']; ?></a> (<?= $score0['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink3']; ?>"><?= $map0['map3']; ?></a> (<?= $score0['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink4']; ?>"><?= $map0['map4']; ?></a> (<?= $score0['scoreMap4']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map0['mapLink5']; ?>"><?= $map0['map5']; ?></a> (<?= $score0['scoreMap5']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <!-- / Third Row -->
                     <!-- Fourth Row -->
                       <div class="col-xs-3 match-date">
                         <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i><?php print_r($model -> matchesDate[0]); ?></h2>
@@ -144,63 +87,6 @@
                         <h3><a href="http://192.168.0.104/vongg/matches/matchstats/<?= $model -> matchesLink[1]; ?>"><?php print_r($model -> matchesName[1]); ?></a></h3>
                       </div>
                     <!-- / Second Row -->
-                    <!-- Third Row -->
-                    <?php if ( $map1['mapCount'] == '1' ) { ?>
-                      <div class="col-xs-12 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink1']; ?>"><?= $map1['map1']; ?></a> (<?= $score1['scoreMap1']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map1['mapCount'] == '2' ) { ?>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink1']; ?>"><?= $map1['map1']; ?></a> (<?= $score1['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink2']; ?>"><?= $map1['map2']; ?></a> (<?= $score1['scoreMap2']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map1['mapCount'] == '3' ) { ?>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink1']; ?>"><?= $map1['map1']; ?></a> (<?= $score1['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink2']; ?>"><?= $map1['map2']; ?></a> (<?= $score1['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink3']; ?>"><?= $map1['map3']; ?></a> (<?= $score1['scoreMap3']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map1['mapCount'] == '4' ) { ?>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink1']; ?>"><?= $map1['map1']; ?></a> (<?= $score1['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink2']; ?>"><?= $map1['map2']; ?></a> (<?= $score1['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink3']; ?>"><?= $map1['map3']; ?></a> (<?= $score1['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink4']; ?>"><?= $map1['map4']; ?></a> (<?= $score1['scoreMap4']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map1['mapCount'] == '5' ) { ?>
-                      <div class="col-xs-2 col-xs-offset-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink1']; ?>"><?= $map1['map1']; ?></a> (<?= $score1['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink2']; ?>"><?= $map1['map2']; ?></a> (<?= $score1['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink3']; ?>"><?= $map1['map3']; ?></a> (<?= $score1['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink4']; ?>"><?= $map1['map4']; ?></a> (<?= $score1['scoreMap4']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map1['mapLink5']; ?>"><?= $map1['map5']; ?></a> (<?= $score1['scoreMap5']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <!-- / Third Row -->
                     <!-- Fourth Row -->
                       <div class="col-xs-3 match-date">
                         <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i><?php print_r($model -> matchesDate[1]); ?></h2>
@@ -239,63 +125,6 @@
                         <h3><a href="http://192.168.0.104/vongg/matches/matchstats/<?= $model -> matchesLink[2]; ?>"><?php print_r($model -> matchesName[2]); ?></a></h3>
                       </div>
                     <!-- / Second Row -->
-                    <!-- Third Row -->
-                    <?php if ( $map2['mapCount'] == '1' ) { ?>
-                      <div class="col-xs-12 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink1']; ?>"><?= $map2['map1']; ?></a> (<?= $score2['scoreMap1']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map2['mapCount'] == '2' ) { ?>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink1']; ?>"><?= $map2['map1']; ?></a> (<?= $score2['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink2']; ?>"><?= $map2['map2']; ?></a> (<?= $score2['scoreMap2']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map2['mapCount'] == '3' ) { ?>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink1']; ?>"><?= $map2['map1']; ?></a> (<?= $score2['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink2']; ?>"><?= $map2['map2']; ?></a> (<?= $score2['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink3']; ?>"><?= $map2['map3']; ?></a> (<?= $score2['scoreMap3']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map2['mapCount'] == '4' ) { ?>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink1']; ?>"><?= $map2['map1']; ?></a> (<?= $score2['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink2']; ?>"><?= $map2['map2']; ?></a> (<?= $score2['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink3']; ?>"><?= $map2['map3']; ?></a> (<?= $score2['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink4']; ?>"><?= $map2['map4']; ?></a> (<?= $score2['scoreMap4']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map2['mapCount'] == '5' ) { ?>
-                      <div class="col-xs-2 col-xs-offset-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink1']; ?>"><?= $map2['map1']; ?></a> (<?= $score2['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink2']; ?>"><?= $map2['map2']; ?></a> (<?= $score2['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink3']; ?>"><?= $map2['map3']; ?></a> (<?= $score2['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink4']; ?>"><?= $map2['map4']; ?></a> (<?= $score2['scoreMap4']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map2['mapLink5']; ?>"><?= $map2['map5']; ?></a> (<?= $score2['scoreMap5']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <!-- / Third Row -->
                     <!-- Fourth Row -->
                       <div class="col-xs-3 match-date">
                         <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i><?php print_r($model -> matchesDate[2]); ?></h2>
@@ -334,63 +163,6 @@
                         <h3><a href="http://192.168.0.104/vongg/matches/matchstats/<?= $model -> matchesLink[3]; ?>"><?php print_r($model -> matchesName[3]); ?></a></h3>
                       </div>
                     <!-- / Second Row -->
-                    <!-- Third Row -->
-                    <?php if ( $map3['mapCount'] == '1' ) { ?>
-                      <div class="col-xs-12 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink1']; ?>"><?= $map3['map1']; ?></a> (<?= $score3['scoreMap1']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map3['mapCount'] == '2' ) { ?>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink1']; ?>"><?= $map3['map1']; ?></a> (<?= $score3['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-6 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink2']; ?>"><?= $map3['map2']; ?></a> (<?= $score3['scoreMap2']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map3['mapCount'] == '3' ) { ?>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink1']; ?>"><?= $map3['map1']; ?></a> (<?= $score3['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink2']; ?>"><?= $map3['map2']; ?></a> (<?= $score3['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-4 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink3']; ?>"><?= $map3['map3']; ?></a> (<?= $score3['scoreMap3']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map3['mapCount'] == '4' ) { ?>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink1']; ?>"><?= $map3['map1']; ?></a> (<?= $score3['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink2']; ?>"><?= $map3['map2']; ?></a> (<?= $score3['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink3']; ?>"><?= $map3['map3']; ?></a> (<?= $score3['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-3 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink4']; ?>"><?= $map3['map4']; ?></a> (<?= $score3['scoreMap4']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <?php if ( $map0['mapCount'] == '5' ) { ?>
-                      <div class="col-xs-2 col-xs-offset-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink1']; ?>"><?= $map3['map1']; ?></a> (<?= $score3['scoreMap1']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink2']; ?>"><?= $map3['map2']; ?></a> (<?= $score3['scoreMap2']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink3']; ?>"><?= $map3['map3']; ?></a> (<?= $score3['scoreMap3']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink4']; ?>"><?= $map3['map4']; ?></a> (<?= $score3['scoreMap4']; ?>)</h3>
-                      </div>
-                      <div class="col-xs-2 match-map">
-                        <h3><a href="http://192.168.0.104/vongg/matches/mapstats/<?= $map3['mapLink5']; ?>"><?= $map3['map5']; ?></a> (<?= $score3['scoreMap5']; ?>)</h3>
-                      </div>
-                    <?php } ?>
-                    <!-- / Third Row -->
                     <!-- Fourth Row -->
                       <div class="col-xs-3 match-date">
                         <h2><i class="fa fa-calendar-o" style="padding-right: 10px;"></i><?php print_r($model -> matchesDate[3]); ?></h2>

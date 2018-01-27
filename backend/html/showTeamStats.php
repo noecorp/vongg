@@ -72,7 +72,7 @@
                   <div class="col-xs-12 team-statistics-maps-slider">
                     <?php for ( $i = 0; $i < 8; $i++ ) { ?>
                     <div class="slide">
-                      <div class="col-xs-12 team-statistics-map" style="background: url('http://192.168.0.104/vongg/frontend/img/<?= $mapList[$i]; ?>.<?= $maps['' . $mapList[$i] . '']['format']; ?>'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
+                      <div class="col-xs-12 team-statistics-map" style="background: url('http://192.168.0.104/vongg/frontend/img/<?= $mapList[$i]; ?>.png'); background-repeat: no-repeat; background-position: center top; background-size: cover;">
                         <div class="col-xs-12 team-statistics-map-box">
                           <div class="col-xs-4 team-statistics-map-name">
                             <h1><?= ucfirst($mapList[$i]); ?></h1>

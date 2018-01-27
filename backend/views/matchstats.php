@@ -1,9 +1,14 @@
 <?php
 
-  require_once 'backend/models/matches.class.php';
-  $model = new MatchesModel();
+  require_once 'backend/models/match.class.php';
+  $model = new MatchModel();
 
+  $model -> showMatchStatsVariables($this -> match);
   $model -> showPartnersVariables();
+
+  $statsTeam1 = unserialize($model -> matchTeamStats1[0]);
+  $statsTeam2 = unserialize($model -> matchTeamStats2[0]);
+  $maps = unserialize($model -> matchMaps[0]);
 
 ?>
 
@@ -15,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: Matches</title>
+    <title>VoNGG :: <?= $this -> matchName; ?> Stats</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -121,20 +126,34 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Partners Section -->
+        <!-- Team Stats Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 matches-section">
-                <!-- Heading Section -->
-                <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
-                  <h1>Matches</h1>
+              <div class="col-xs-12 matchstats-section">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                  <?php $model -> showMatchStats($this -> match); ?>
+                  <!-- Single News Comments -->
+                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                      <div class="single-news-comments-section" count="<?= $model -> newsCommentsCount; ?>">
+                        <!-- Heading Section -->
+                          <div class="col-xs-12 col-md-12 heading-section">
+                            <h1>Comments (2)</h1>
+                          </div>
+                        <!-- / Heading Section -->
+                        <form method="post" action="http://192.168.0.104/vongg/form/addTeamComment" class="col-xs-12 col-md-10 col-md-offset-1 single-news-comment-add">
+                          <div class="form-group">
+                            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-default pull-right" name="addComment">Add comment</button>
+                        </form>
+                      </div>
+                    </div>
+                  <!-- / Single News Comments -->
                 </div>
-                <!-- / Heading Section -->
-                <?php $model -> showAllMatches('all'); ?>
               </div>
             </div>
           </div>
-        <!-- / Partners Section -->
+        <!-- / Lineup Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">
@@ -234,7 +253,9 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- Bootstrap -->
       <script src="http://192.168.0.104/vongg/frontend/js/bootstrap-run.js?<?= time(); ?>"></script> <!-- Bootstrap Components Run -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
+      <script src="http://192.168.0.104/vongg/frontend/js/show-match-table-stats.js?<?= time(); ?>"></script> <!-- Show Match Table Stats -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
+      <script src="http://192.168.0.104/vongg/frontend/js/statistics-maps-slider.js?<?= time(); ?>"></script> <!-- Statistics Maps Slider -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
       <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->
     <!-- / JS Scripts -->
