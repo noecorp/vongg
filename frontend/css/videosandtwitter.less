@@ -1,3 +1,23 @@
 .videos-twitter-section {
   .pad-top-bot(100px;100px);
 }
+
+.circle-slide-item {
+  text-align: center;
+  margin-bottom: -20px;
+  z-index: 1;
+  .circle-slide {
+    padding: 20px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: @second-color;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      i {
+        transition-duration: 150ms;
+        transform: scale(1.5);
+      }
+    }
+  }
+}

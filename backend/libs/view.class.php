@@ -3,7 +3,9 @@
   class View {
 
     function __construct() {
-
+      $this -> request = $_GET['url'];
+      $this -> request = rtrim($this -> request, '/');
+      $this -> params = explode("/", $this -> request);
     }
 
     public function model() {

@@ -278,16 +278,25 @@
         $listImg = [];
         $listLink = [];
         $listTitle = [];
+        $listTag = [];
+        $listDate = [];
+        $listTime = [];
 
         while ( $list = $selectNewsListQuery->fetch() ) {
           array_push($listImg, $list['img']);
           array_push($listLink, $list['link']);
           array_push($listTitle, $list['title']);
+          array_push($listTag, $list['tag']);
+          array_push($listDate, $list['date']);
+          array_push($listTime, $list['time']);
         }
 
         $this -> newsListImg = $listImg;
         $this -> newsListLink = $listLink;
         $this -> newsListTitle = $listTitle;
+        $this -> newsListTag = $listTag;
+        $this -> newsListDate = $listDate;
+        $this -> newsListTime = $listTime;
 
       }
 
@@ -305,16 +314,25 @@
         $listImg = [];
         $listLink = [];
         $listTitle = [];
+        $listTag = [];
+        $listDate = [];
+        $listTime = [];
 
         while ( $list = $selectNewsListQuery->fetch() ) {
           array_push($listImg, $list['img']);
           array_push($listLink, $list['link']);
           array_push($listTitle, $list['title']);
+          array_push($listTag, $list['tag']);
+          array_push($listDate, $list['date']);
+          array_push($listTime, $list['time']);
         }
 
-        $this -> listImg = $listImg;
-        $this -> listLink = $listLink;
-        $this -> listTitle = $listTitle;
+        $this -> newsListImg = $listImg;
+        $this -> newsListLink = $listLink;
+        $this -> newsListTitle = $listTitle;
+        $this -> newsListTag = $listTag;
+        $this -> newsListDate = $listDate;
+        $this -> newsListTime = $listTime;
 
         include 'http://192.168.0.104/vongg/showHTML/showNewsList';
 

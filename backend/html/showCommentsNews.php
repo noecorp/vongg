@@ -48,7 +48,7 @@
                           <h4><i class="fa fa-calendar-o"></i><?= $model -> newsCommentDate[$i]; ?></h4>
                           <h4><i class="fa fa-clock-o"></i><?= $model -> newsCommentTime[$i]; ?></h4>
                           <?php if ( $model -> newsCommentEditStatus[$i] != 0 ) { ?>
-                          <h4 data-toggle="tooltip" data-placement="bottom" title="<?= $model -> newsCommentEditStatus[$i]; ?>" class="showEditedContent"><i class="fa fa-pencil"></i><span showEditedContent="<?= $model -> newsCommentID[$i]; ?>">Edited</span></h4>
+                          <h4 data-toggle="tooltip" data-placement="bottom" title="<?= $model -> newsCommentEditStatus[$i]; ?>" class="showEditedContent"><i class="fa fa-pencil"></i><span showEditedContent="<?= $model -> newsCommentID[$i]; ?>" showed="0">Edited</span></h4>
                           <?php } ?>
                         </div>
                         <div class="col-xs-8 single-news-comment-content">

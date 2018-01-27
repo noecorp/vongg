@@ -50,7 +50,7 @@
 
         <!-- Social Bar -->
           <div class="container-fluid">
-            <div class="row social-bar">
+            <div class="row social-bar" id="social-bar">
               <div class="col-xs-12 col-md-offset-10 col-md-2">
                 <!-- Social Items -->
                   <div class="col-xs-3 social-item">
@@ -89,6 +89,7 @@
                       <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg/achievments">Achievments</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">About Us</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
                       <span id="en" class="change-lang lang-active">EN</span> <span id="pl" class="change-lang">PL</span>
@@ -106,6 +107,7 @@
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
                       <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
+                      <li><a href="http://192.168.0.104/vongg/achievments">Osiągnięcia</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">O nas</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
                       <span id="en" class="change-lang">EN</span> <span id="pl" class="change-lang lang-active">PL</span>
@@ -216,6 +218,14 @@
           </div>
         <!-- / Videos & Twitter Section -->
 
+        <!-- UP Circle Slide -->
+          <div class="col-xs-4 col-xs-offset-4 circle-slide-item">
+            <span class="circle-slide" id="slide-up">
+              <i class="fa fa-chevron-up"></i>
+            </span>
+          </div>
+        <!-- / UP Circle Slide -->
+
         <!-- BIG Footer -->
           <div class="container-fluid">
             <div class="row">
@@ -289,6 +299,7 @@
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
+      <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->
     <!-- / JS Scripts -->
 
   </body>
