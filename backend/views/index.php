@@ -1,9 +1,16 @@
 <?php
 
   require_once 'backend/models/index.class.php';
+  require_once 'backend/models/login.class.php';
   $model = new IndexModel();
+  $login = new LoginModel();
 
   $model -> showPartnersVariables();
+  if ( isset($_SESSION['loginStatus']) ) {
+    $login -> showNotifications($_SESSION['loginUsername']);
+    $login -> showPermissions($_SESSION['loginUsername']);
+    $login -> showPermissionsAdd($_SESSION['loginUsername']);
+  }
 
 ?>
 
@@ -50,11 +57,12 @@
 
         <!-- Social Bar -->
           <div class="container-fluid">
-            <div class="row social-bar" id="social-bar">
+            <div class="row social-bar">
+              <?php if ( ! isset($_SESSION['loginStatus']) ) { ?>
               <div class="col-xs-12 col-md-offset-10 col-md-2">
                 <!-- Social Items -->
                   <div class="col-xs-3 social-item">
-                    <a href="#"><i class="fa fa-sign-in"></i></a>
+                    <a href="http://192.168.0.104/vongg/login"><i class="fa fa-sign-in"></i></a>
                   </div>
                   <div class="col-xs-3 social-item">
                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -67,6 +75,57 @@
                   </div>
                 <!-- / Social Items -->
               </div>
+            <?php } else { ?>
+              <div class="col-xs-12 col-md-offset-7 col-md-3">
+                <div class="col-xs-4 social-login-username">
+                  <a href="http://192.168.0.104/vongg/user/<?= $_SESSION['loginUsername']; ?>"><h1><?= $_SESSION['loginUsername']; ?></h1></a>
+                </div>
+                <div class="col-xs-2 social-item dropdown">
+                  <button type="button" class="social-item dropdown-toggle" id="loginNotificationsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-globe"></i><span><?= $login -> notificationsCount; ?></span></button>
+                  <ul class="dropdown-menu" aria-labelledby="loginNotificationsButton">
+                    <?php for ( $i = 0; $i < $login -> notificationsCount; $i++ ) { ?>
+                      <li><a href="<?= $login -> notificationsLink[$i]; ?>"><?= $login -> notificationsContent[$i]; ?></a><i class="fa fa-trash" id="notificationDelete" notificationId="<?= $i; ?>"></i></li>
+                    <?php } ?>
+                  </ul>
+                </div>
+                <?php if ( $_SESSION['loginPermissionsPower'] >= 50 ) { ?>
+                  <div class="col-xs-2 social-item dropdown">
+                    <button type="button" class="social-item dropdown-toggle" id="loginAddButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-plus"></i></button>
+                    <ul class="dropdown-menu" aria-labelledby="loginAddButton">
+                      <?php for ( $i = 0; $i < $login -> permissionsAddCount; $i++ ) { ?>
+                        <li><a href="<?= $login -> permissionsAddLink[$i]; ?>"><?= $login -> permissionsAddPermission[$i]; ?></a></li>
+                      <?php } ?>
+                    </ul>
+                  </div>
+                <?php } ?>
+                <div class="col-xs-2 social-item dropdown">
+                  <button type="button" class="social-item dropdown-toggle" id="loginSettingsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-cog"></i></button>
+                  <ul class="dropdown-menu" aria-labelledby="loginSettingsButton">
+                    <?php for ( $i = 0; $i < $login -> permissionsCount; $i++ ) { ?>
+                      <li><a href="<?= $login -> permissions[$i]; ?>"><?= $login -> permissionsPermission[$i]; ?></a></li>
+                    <?php } ?>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="http://192.168.0.104/vongg/account/settings">Show all settings</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-2 social-item">
+                  <a href="http://192.168.0.104/vongg/login/logout"><i class="fa fa-sign-out"></i></a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-2">
+                <!-- Social Items -->
+                  <div class="col-xs-4 social-item">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                  </div>
+                  <div class="col-xs-4 social-item">
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                  </div>
+                  <div class="col-xs-4 social-item">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                  </div>
+                <!-- / Social Items -->
+              </div>
+            <?php } ?>
             </div>
           </div>
         <!-- / Social Bar -->
@@ -296,6 +355,7 @@
     <!-- / Main Container -->
 
     <!-- JS Scripts -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- Bootstrap -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->

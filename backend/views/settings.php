@@ -1,8 +1,8 @@
 <?php
 
-  require_once 'backend/models/matches.class.php';
+  require_once 'backend/models/achievments.class.php';
   require_once 'backend/models/login.class.php';
-  $model = new MatchesModel();
+  $model = new AchievmentsModel();
   $login = new LoginModel();
 
   $model -> showPartnersVariables();
@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Team VoN :: <?= $this -> type; ?> Matches</title>
+    <title>Team VoN :: Account Settings</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -147,7 +147,7 @@
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Lineup</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partners</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
+                      <li><a href="http://192.168.0.104/vongg/matches">Matches</a></li>
                       <li><a href="http://192.168.0.104/vongg/achievments">Achievments</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">About Us</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Contact</a></li>
@@ -165,7 +165,7 @@
                       <li><a href="http://192.168.0.104/vongg/news">News</a></li>
                       <li><a href="http://192.168.0.104/vongg/lineup">Skład</a></li>
                       <li><a href="http://192.168.0.104/vongg/partners">Partnerzy</a></li>
-                      <li class="current-item"><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
+                      <li><a href="http://192.168.0.104/vongg/matches">Mecze</a></li>
                       <li><a href="http://192.168.0.104/vongg/achievments">Osiągnięcia</a></li>
                       <li><a href="http://192.168.0.104/vongg/about">O nas</a></li>
                       <li><a href="http://192.168.0.104/vongg/contact">Kontakt</a></li>
@@ -180,20 +180,113 @@
           </div>
         <!-- / Header Bar -->
 
-        <!-- Partners Section -->
+        <!-- Account Settings Section -->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-12 matches-section">
+              <div class="col-xs-12 account-settings-section">
                 <!-- Heading Section -->
                 <div class="col-xs-12 col-md-11 col-md-offset-1 heading-section">
-                  <h1><?= $this -> type; ?> Matches</h1>
+                  <h1>Account Settings</h1>
                 </div>
                 <!-- / Heading Section -->
-                <?php $model -> showAllMatches($this -> type, $this -> content); ?>
+                <div class="col-xs-12 col-md-2 col-md-offset-1">
+                  <ul class="nav nav-pills nav-stacked">
+                    <li class="active" id="settings"><a>Settings</a></li>
+                    <?php for ( $i = 0; $i < $login -> permissionsCount; $i++ ) { ?>
+                      <li id="<?= $login -> permissions[$i]; ?>"><a><?= $login -> permissionsPermission[$i]; ?></a></li>
+                    <?php } ?>
+                  </ul>
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-1" id="settingsContent">
+                  <div class="account-settings-heading">
+                    <h1>Settings</h1>
+                  </div>
+                  <div class="account-settings-content">
+                    <p></p>
+                  </div>
+                </div>
+                <?php if ( $_SESSION['loginPermissionsPower'] > 0 ) { ?>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeEmailContent">
+                    <div class="account-settings-heading">
+                      <h1>Change E-mail</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Change email</p>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changePasswordContent">
+                    <div class="account-settings-heading">
+                      <h1>Change Password</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Change password</p>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeAvatarContent">
+                    <div class="account-settings-heading">
+                      <h1>Change Avatar</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Change avatar</p>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeSocialsContent">
+                    <div class="account-settings-heading">
+                      <h1>Change Socials</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Change socials</p>
+                    </div>
+                  </div>
+                <?php } ?>
+                <?php if ( $_SESSION['loginPermissionsPower'] >= 60 ) { ?>
+                <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeInformationsContent">
+                  <div class="account-settings-heading">
+                    <h1>Change Informations</h1>
+                  </div>
+                  <div class="account-settings-content">
+                    <p>Change informations</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeIndividualAchievmentsContent">
+                  <div class="account-settings-heading">
+                    <h1>Change Individual Achievments</h1>
+                  </div>
+                  <div class="account-settings-content">
+                    <p>Change Individual Achievments</p>
+                  </div>
+                </div>
+              <?php } ?>
+                <?php if ( $_SESSION['loginPermissionsPower'] >= 100 ) { ?>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="editLineupContent">
+                    <div class="account-settings-heading">
+                      <h1>Edit Lineup</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Edit lineup</p>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="editPartnersContent">
+                    <div class="account-settings-heading">
+                      <h1>Edit Partners</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Edit partners</p>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="editAchievmentsContent">
+                    <div class="account-settings-heading">
+                      <h1>Edit Achievments</h1>
+                    </div>
+                    <div class="account-settings-content">
+                      <p>Edit achievments</p>
+                    </div>
+                  </div>
+                <?php } ?>
               </div>
             </div>
           </div>
-        <!-- / Partners Section -->
+        <!-- / Achievments Section -->
 
         <!-- Partners Bar -->
           <div class="container-fluid">
@@ -294,6 +387,7 @@
       <script src="http://192.168.0.104/vongg/frontend/js/bootstrap-run.js?<?= time(); ?>"></script> <!-- Bootstrap Components Run -->
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
+      <script src="http://192.168.0.104/vongg/frontend/js/settingsMenu.js?<?= time(); ?>"></script> <!-- Settings Menu -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
       <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->
     <!-- / JS Scripts -->

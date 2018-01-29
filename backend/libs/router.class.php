@@ -12,6 +12,7 @@
       if ( $this -> controller == 'index.php' ) {
         $this -> controller = 'index';
       }
+
       $this -> controller = strtolower($this -> controller);
 
       $file = 'backend/controllers/' . $this -> controller . '.class.php';
