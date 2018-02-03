@@ -71,6 +71,7 @@
         $_SESSION['loginStatus'] = true;
         $_SESSION['loginUsername'] = $user['username'];
         $_SESSION['loginPassword'] = $user['password'];
+        $_SESSION['loginAvatar'] = $user['avatar'];
         $_SESSION['loginPermissions'] = $user['permissions'];
         $_SESSION['loginPermissionsPower'] = $user['permissionsPower'];
 

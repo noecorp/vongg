@@ -197,7 +197,7 @@
                     <?php } ?>
                   </ul>
                 </div>
-                <div class="col-xs-12 col-md-8 col-md-offset-1" id="settingsContent">
+                <div class="col-xs-12 col-md-7 col-md-offset-1" id="settingsContent">
                   <div class="account-settings-heading">
                     <h1>Settings</h1>
                   </div>
@@ -206,31 +206,88 @@
                   </div>
                 </div>
                 <?php if ( $_SESSION['loginPermissionsPower'] > 0 ) { ?>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeEmailContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeEmailContent">
                     <div class="account-settings-heading">
                       <h1>Change E-mail</h1>
                     </div>
                     <div class="account-settings-content">
-                      <p>Change email</p>
+                      <form method="post" action="http://192.168.0.104/vongg/form/accountChangeEmail" class="col-xs-12">
+                        <div class="form-group col-xs-10 col-md-4" id="changeEmailInput">
+                          <label for="email">New e-mail address</label>
+                          <input type="email" class="form-control" name="newEmail" id="email">
+                        </div>
+                        <div class="form-group col-xs-10 col-md-4 display-none" id="changeEmailPassword">
+                          <label for="password">Confirm the action with your password</label>
+                          <input type="password" name="confirmPassword" class="form-control">
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default" name="changeEmail" id="changeEmailBtn">Change e-mail</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default display-none" name="accountChangeEmail" id="accountChangeEmailBtn">Are you sure?</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="submit" class="btn btn-default display-none" name="accountChangeEmailConfirm" id="accountChangeEmailConfirmBtn">Confirm</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changePasswordContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="changePasswordContent">
                     <div class="account-settings-heading">
                       <h1>Change Password</h1>
                     </div>
                     <div class="account-settings-content">
-                      <p>Change password</p>
+                      <form method="post" action="http://192.168.0.104/vongg/form/accountChangePassword" class="col-xs-12">
+                        <div class="form-group col-xs-10 col-md-4" id="changePasswordInput">
+                          <label for="password">New password</label>
+                          <input type="password" name="newPassword" class="form-control">
+                        </div>
+                        <div class="form-group col-xs-10 col-md-4 display-none" id="changePasswordPassword">
+                          <label for="password">Confirm the action with your CURRENT password</label>
+                          <input type="password" name="confirmPassword" class="form-control">
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default" name="changePassword" id="changePasswordBtn">Change password</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default display-none" name="accountChangePassword" id="accountChangePasswordBtn">Are you sure?</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="submit" class="btn btn-default display-none" name="accountChangePasswordConfirm" id="accountChangePasswordConfirmBtn">Confirm</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeAvatarContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeAvatarContent">
                     <div class="account-settings-heading">
                       <h1>Change Avatar</h1>
                     </div>
                     <div class="account-settings-content">
-                      <p>Change avatar</p>
+                      <form method="post" action="http://192.168.0.104/vongg/form/accountChangeAvatar" class="col-xs-12">
+                        <div class="currentAvatar col-xs-12 col-md-4" id="currentAvatar">
+                          <h1>Current avatar</h1>
+                          <img src="http://192.168.0.104/vongg/temp/<?= $_SESSION['loginAvatar']; ?>" />
+                        </div>
+                        <div class="form-group col-xs-12 col-md-12" id="changeAvatarInput">
+                          <input type="file" name="newAvatar" accept="image/*">
+                        </div>
+                        <div class="form-group col-xs-10 col-md-4 display-none" id="changeAvatarPassword">
+                          <label for="password">Confirm the action with your password</label>
+                          <input type="password" name="confirmAvatar" class="form-control">
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default" name="changeAvatar" id="changeAvatarBtn">Change avatar</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default display-none" name="accountChangeAvatar" id="accountChangeAvatarBtn">Are you sure?</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="submit" class="btn btn-default display-none" name="accountChangeAvatarConfirm" id="accountChangeAvatarConfirmBtn">Confirm</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeSocialsContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeSocialsContent">
                     <div class="account-settings-heading">
                       <h1>Change Socials</h1>
                     </div>
@@ -240,25 +297,110 @@
                   </div>
                 <?php } ?>
                 <?php if ( $_SESSION['loginPermissionsPower'] >= 60 ) { ?>
-                <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeInformationsContent">
+                <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeInformationsContent">
                   <div class="account-settings-heading">
                     <h1>Change Informations</h1>
                   </div>
-                  <div class="account-settings-content">
-                    <p>Change informations</p>
-                  </div>
+                  <form method="post" action="http://192.168.0.104/vongg/form/accountChangeInformations" class="col-xs-12">
+                    <div class="form-group col-xs-10 col-md-4" id="changeSloganInput">
+                      <label for="slogan">Slogan</label>
+                      <input type="text" class="form-control" name="newSlogan" id="slogan">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeShortInfoInput">
+                      <label for="shortInfo">Short Info</label>
+                      <input type="text" class="form-control" name="newShortInfo" id="shortInfo">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeFunFactInput">
+                      <label for="funFact">Fun Fact</label>
+                      <input type="text" class="form-control" name="newFunFact" id="funFact">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeLaunchOptionsInput">
+                      <label for="launchOptions">Launch Options</label>
+                      <input type="text" class="form-control" name="newLaunchOptions" id="launchOptions">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeResolutionInput">
+                      <label for="resolution">Resolution</label>
+                      <input type="text" class="form-control" name="newResolution" id="resolution">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeSensitivityInput">
+                      <label for="sensitivity">Sensitivity</label>
+                      <input type="text" class="form-control" name="newSensitivity" id="sensitivity">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeCrosshairInput">
+                      <label for="crosshair">Crosshair</label>
+                      <input type="text" class="form-control" name="newCrosshair" id="crosshair">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeConfigInput">
+                      <label for="config">Config</label>
+                      <input type="text" class="form-control" name="newConfig" id="config">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4 display-none" id="changeInformationsPassword">
+                      <label for="password">Confirm the action with your password</label>
+                      <input type="password" name="confirmPassword" class="form-control">
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="button" class="btn btn-default" name="changeEmail" id="changeInformationsBtn">Change informations</button>
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="button" class="btn btn-default display-none" name="accountChangeInformations" id="accountChangeInformationsBtn">Are you sure?</button>
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="submit" class="btn btn-default display-none" name="accountChangeInformationsConfirm" id="accountChangeInformationsConfirmBtn">Confirm</button>
+                    </div>
+                  </form>
                 </div>
-                <div class="col-xs-12 col-md-8 col-md-offset-1" id="changeIndividualAchievmentsContent">
+                <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeIndividualAchievmentsContent">
                   <div class="account-settings-heading">
                     <h1>Change Individual Achievments</h1>
                   </div>
                   <div class="account-settings-content">
-                    <p>Change Individual Achievments</p>
+                    <form method="post" action="http://192.168.0.104/vongg/form/accountChangeIndividualAchievments" class="col-xs-12">
+                      <div class="form-group col-xs-10 col-md-4" id="changeAchievmentInput">
+                        <label for="achievment">Achievment</label>
+                        <input type="text" class="form-control" name="newAchievment" id="achievment">
+                      </div>
+                      <div class="form-group col-xs-10 col-md-2" id="FirstPlaceInput">
+                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
+                        <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place</span></span>
+                        <input type="checkbox" class="form-control" name="FirstPlace" id="FirstPlace">
+                      </div>
+                      <div class="form-group col-xs-10 col-md-2" id="SecondPlaceInput">
+                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
+                        <span class="second-place"><i class="fa fa-trophy"></i><span class="strong-place">2nd place</span></span>
+                        <input type="checkbox" class="form-control" name="SecondPlace" id="SecondPlace">
+                      </div>
+                      <div class="form-group col-xs-10 col-md-2" id="ThirdPlaceInput">
+                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
+                        <span class="third-place"><i class="fa fa-trophy"></i><span class="strong-place">3td place</span></span>
+                        <input type="checkbox" class="form-control" name="ThirdPlace" id="ThirdPlace">
+                      </div>
+                      <div class="form-group col-xs-10 col-md-2" id="AnotherPlaceInput">
+                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
+                        <span class="place"><i class="fa fa-trophy"></i><span class="strong-place">Another place</span></span>
+                        <input type="number" class="form-control" name="AnotherPlace" id="AnotherPlace" min="4" max="100">
+                      </div>
+                      <div class="form-group col-xs-10 col-md-2" id="addAchievmentInput">
+                        <span><i class="fa fa-plus"></i></span>
+                      </div>
+                      <div class="form-group col-xs-10 col-md-4 display-none" id="changeInformationsPassword">
+                        <label for="password">Confirm the action with your password</label>
+                        <input type="password" name="confirmPassword" class="form-control">
+                      </div>
+                      <div class="col-xs-12">
+                        <button type="button" class="btn btn-default" name="changeEmail" id="changeInformationsBtn">Change informations</button>
+                      </div>
+                      <div class="col-xs-12">
+                        <button type="button" class="btn btn-default display-none" name="accountChangeInformations" id="accountChangeInformationsBtn">Are you sure?</button>
+                      </div>
+                      <div class="col-xs-12">
+                        <button type="submit" class="btn btn-default display-none" name="accountChangeInformationsConfirm" id="accountChangeInformationsConfirmBtn">Confirm</button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               <?php } ?>
                 <?php if ( $_SESSION['loginPermissionsPower'] >= 100 ) { ?>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="editLineupContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="editLineupContent">
                     <div class="account-settings-heading">
                       <h1>Edit Lineup</h1>
                     </div>
@@ -266,7 +408,7 @@
                       <p>Edit lineup</p>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="editPartnersContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="editPartnersContent">
                     <div class="account-settings-heading">
                       <h1>Edit Partners</h1>
                     </div>
@@ -274,7 +416,7 @@
                       <p>Edit partners</p>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-8 col-md-offset-1" id="editAchievmentsContent">
+                  <div class="col-xs-12 col-md-7 col-md-offset-1" id="editAchievmentsContent">
                     <div class="account-settings-heading">
                       <h1>Edit Achievments</h1>
                     </div>
@@ -388,6 +530,7 @@
       <script src="http://192.168.0.104/vongg/frontend/js/menu-line.js?<?= time(); ?>"></script> <!-- Menu Slide Line -->
       <script src="http://192.168.0.104/vongg/frontend/js/slick.js?<?= time(); ?>"></script> <!-- Slick.js -->
       <script src="http://192.168.0.104/vongg/frontend/js/settingsMenu.js?<?= time(); ?>"></script> <!-- Settings Menu -->
+      <script src="http://192.168.0.104/vongg/frontend/js/settingsBtns.js?<?= time(); ?>"></script> <!-- Settings Buttons -->
       <script src="http://192.168.0.104/vongg/frontend/js/partners-logo-slider.js?<?= time(); ?>"></script> <!-- Partners Logo Slider -->
       <script src="http://192.168.0.104/vongg/frontend/js/slide-up.js?<?= time(); ?>"></script> <!-- Slide UP -->
     <!-- / JS Scripts -->
