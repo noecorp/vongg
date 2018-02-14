@@ -45,6 +45,9 @@ $(document).ready(function(){
   $('#accountChangeInformationsBtn').on('click', function(){
     $('#changeSloganInput').hide();
     $('#changeShortInfoInput').hide();
+    $('#changeRoleInput').hide();
+    $('#changeAgeInput').hide();
+    $('#changeFromInput').hide();
     $('#changeFunFactInput').hide();
     $('#changeLaunchOptionsInput').hide();
     $('#changeResolutionInput').hide();
@@ -54,6 +57,30 @@ $(document).ready(function(){
     $(this).hide();
     $('#changeInformationsPassword').show();
     $('#accountChangeInformationsConfirmBtn').show();
+  });
+
+  $('#changeIndividualAchievmentsBtn').on('click', function(){
+    $(this).hide();
+    $('#accountChangeIndividualAchievmentsBtn').show();
+  });
+
+  $('#accountChangeIndividualAchievmentsBtn').on('click', function(){
+    $('.account-settings-achievments-table').hide();
+    $(this).hide();
+    $('#changeIndividualAchievmentsPassword').show();
+    $('#accountChangeIndividualAchievmentsConfirmBtn').show();
+  });
+
+  $('#changeSocialsBtn').on('click', function(){
+    $(this).hide();
+    $('#accountChangeSocialsBtn').show();
+  });
+
+  $('#accountChangeSocialsBtn').on('click', function(){
+    $('.change-socials-form').hide();
+    $(this).hide();
+    $('#changeSocialsPassword').show();
+    $('#accountChangeSocialsConfirmBtn').show();
   });
 
 });

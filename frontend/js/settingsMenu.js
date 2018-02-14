@@ -260,4 +260,18 @@ $(document).ready(function(){
     $('#editPartnersContent').hide();
   });
 
+  $('i').on('click', function(){
+    var achievmentId = $(this).attr('achievment');
+    var placeId = $(this).attr('place');
+    if ( $(this).attr('show') == 'false' ) {
+      $('#editAchievmentInput' + achievmentId).show();
+      $('#editPlaceInput' + placeId).show();
+      $(this).attr('show', 'true');
+    } else {
+      $('#editAchievmentInput' + achievmentId).hide();
+      $('#editPlaceInput' + placeId).hide();
+      $(this).attr('show', 'false');
+    }
+  });
+
 });

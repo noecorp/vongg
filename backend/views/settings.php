@@ -1,15 +1,26 @@
 <?php
 
-  require_once 'backend/models/achievments.class.php';
+  require_once 'backend/models/settings.class.php';
   require_once 'backend/models/login.class.php';
-  $model = new AchievmentsModel();
+  $model = new SettingsModel();
   $login = new LoginModel();
 
-  $model -> showPartnersVariables();
   if ( isset($_SESSION['loginStatus']) ) {
     $login -> showNotifications($_SESSION['loginUsername']);
     $login -> showPermissions($_SESSION['loginUsername']);
     $login -> showPermissionsAdd($_SESSION['loginUsername']);
+    $model -> showPartnersVariables();
+    $model -> showInformationsVariables($_SESSION['loginUsername']);
+    $model -> showIndividualAchievmentsVariables($_SESSION['loginUsername']);
+    $model -> showSocialsVariables($_SESSION['loginUsername']);
+
+    $info = unserialize($model -> userInformations);
+    $settings = unserialize($model -> userSettings);
+    $achievments = unserialize($model -> userIndividualAchievments);
+    $socials = unserialize($model -> userSocials);
+
+  } else {
+    header('Location: http://192.168.0.104/vongg/login');
   }
 
 ?>
@@ -98,15 +109,8 @@
                     </ul>
                   </div>
                 <?php } ?>
-                <div class="col-xs-2 social-item dropdown">
-                  <button type="button" class="social-item dropdown-toggle" id="loginSettingsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-cog"></i></button>
-                  <ul class="dropdown-menu" aria-labelledby="loginSettingsButton">
-                    <?php for ( $i = 0; $i < $login -> permissionsCount; $i++ ) { ?>
-                      <li><a href="<?= $login -> permissions[$i]; ?>"><?= $login -> permissionsPermission[$i]; ?></a></li>
-                    <?php } ?>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="http://192.168.0.104/vongg/account/settings">Show all settings</a></li>
-                  </ul>
+                <div class="col-xs-2 social-item">
+                  <a href="http://192.168.0.104/vongg/account/settings"><i class="fa fa-cog"></i></a>
                 </div>
                 <div class="col-xs-2 social-item">
                   <a href="http://192.168.0.104/vongg/login/logout"><i class="fa fa-sign-out"></i></a>
@@ -202,7 +206,27 @@
                     <h1>Settings</h1>
                   </div>
                   <div class="account-settings-content">
-                    <p></p>
+                    <?php if ( isset($_SESSION['accountSettingsAlertError']) ) { ?>
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?= $_SESSION['accountSettingsAlertError']; ?>
+                      </div>
+                      <?php unset($_SESSION['accountSettingsAlertError']); ?>
+                    <?php } ?>
+                    <?php if ( isset($_SESSION['accountSettingsAlertPasswordConfirmError']) ) { ?>
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?= $_SESSION['accountSettingsAlertPasswordConfirmError']; ?>
+                      </div>
+                      <?php unset($_SESSION['accountSettingsAlertPasswordConfirmError']); ?>
+                    <?php } ?>
+                    <?php if ( isset($_SESSION['accountSettingsAlertSuccess']) ) { ?>
+                      <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?= $_SESSION['accountSettingsAlertSuccess']; ?>
+                      </div>
+                      <?php unset($_SESSION['accountSettingsAlertSuccess']); ?>
+                    <?php } ?>
                   </div>
                 </div>
                 <?php if ( $_SESSION['loginPermissionsPower'] > 0 ) { ?>
@@ -214,11 +238,11 @@
                       <form method="post" action="http://192.168.0.104/vongg/form/accountChangeEmail" class="col-xs-12">
                         <div class="form-group col-xs-10 col-md-4" id="changeEmailInput">
                           <label for="email">New e-mail address</label>
-                          <input type="email" class="form-control" name="newEmail" id="email">
+                          <input type="email" placeholder="john@doe.com" class="form-control" name="newEmail" id="email">
                         </div>
                         <div class="form-group col-xs-10 col-md-4 display-none" id="changeEmailPassword">
                           <label for="password">Confirm the action with your password</label>
-                          <input type="password" name="confirmPassword" class="form-control">
+                          <input type="password" name="emailConfirmPassword" class="form-control">
                         </div>
                         <div class="col-xs-12">
                           <button type="button" class="btn btn-default" name="changeEmail" id="changeEmailBtn">Change e-mail</button>
@@ -244,7 +268,7 @@
                         </div>
                         <div class="form-group col-xs-10 col-md-4 display-none" id="changePasswordPassword">
                           <label for="password">Confirm the action with your CURRENT password</label>
-                          <input type="password" name="confirmPassword" class="form-control">
+                          <input type="password" name="passwordConfirmPassword" class="form-control">
                         </div>
                         <div class="col-xs-12">
                           <button type="button" class="btn btn-default" name="changePassword" id="changePasswordBtn">Change password</button>
@@ -263,7 +287,7 @@
                       <h1>Change Avatar</h1>
                     </div>
                     <div class="account-settings-content">
-                      <form method="post" action="http://192.168.0.104/vongg/form/accountChangeAvatar" class="col-xs-12">
+                      <form method="post" action="http://192.168.0.104/vongg/form/accountChangeAvatar" enctype="multipart/form-data" class="col-xs-12">
                         <div class="currentAvatar col-xs-12 col-md-4" id="currentAvatar">
                           <h1>Current avatar</h1>
                           <img src="http://192.168.0.104/vongg/temp/<?= $_SESSION['loginAvatar']; ?>" />
@@ -273,7 +297,7 @@
                         </div>
                         <div class="form-group col-xs-10 col-md-4 display-none" id="changeAvatarPassword">
                           <label for="password">Confirm the action with your password</label>
-                          <input type="password" name="confirmAvatar" class="form-control">
+                          <input type="password" name="passwordConfirmAvatar" class="form-control">
                         </div>
                         <div class="col-xs-12">
                           <button type="button" class="btn btn-default" name="changeAvatar" id="changeAvatarBtn">Change avatar</button>
@@ -292,7 +316,47 @@
                       <h1>Change Socials</h1>
                     </div>
                     <div class="account-settings-content">
-                      <p>Change socials</p>
+                      <form method="post" action="http://192.168.0.104/vongg/form/accountChangeSocials" class="col-xs-12">
+                        <div class="change-socials-form">
+                          <div class="form-group col-xs-10 col-md-4" id="changeFacebookInput">
+                            <label for="facebook">Facebook</label>
+                            <input type="text" class="form-control" value="<?= $socials['fb']; ?>" placeholder="https://facebook.com/yourname" name="newFacebook" id="facebook">
+                          </div>
+                          <div class="form-group col-xs-10 col-md-4" id="changeYouTubeInput">
+                            <label for="youtube">YouTube</label>
+                            <input type="text" class="form-control" value="<?= $socials['yt']; ?>" placeholder="https://youtube.com/yourname" name="newYouTube" id="youtube">
+                          </div>
+                          <div class="form-group col-xs-10 col-md-4" id="changeTwitterInput">
+                            <label for="twitter">Twitter</label>
+                            <input type="text" class="form-control" value="<?= $socials['tw']; ?>" placeholder="https://twitter.com/yourname" name="newTwitter" id="twitter">
+                          </div>
+                          <div class="form-group col-xs-10 col-md-4" id="changeTwitchInput">
+                            <label for="twitch">Twitch</label>
+                            <input type="text" class="form-control" value="<?= $socials['twitch']; ?>" placeholder="https://twitch.tv/yourname" name="newTwitch" id="twitch">
+                          </div>
+                          <div class="form-group col-xs-10 col-md-4" id="changeInstagramInput">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" class="form-control" value="<?= $socials['ig']; ?>" placeholder="https://instagram.com/yourname" name="newInstagram" id="instagram">
+                          </div>
+                          <div class="form-group col-xs-10 col-md-4" id="changeSteamInput">
+                            <label for="steam">Steam</label>
+                            <input type="text" class="form-control" value="<?= $socials['steam']; ?>" placeholder="https://steamcommunity.com/id/yourname" name="newSteam" id="steam">
+                          </div>
+                        </div>
+                          <div class="form-group col-xs-10 col-md-4 display-none" id="changeSocialsPassword">
+                            <label for="password">Confirm the action with your password</label>
+                            <input type="password" name="socialsConfirmPassword" class="form-control">
+                          </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default" name="changeSocials" id="changeSocialsBtn">Change socials</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="button" class="btn btn-default display-none" name="accountChangeSocials" id="accountChangeSocialsBtn">Are you sure?</button>
+                        </div>
+                        <div class="col-xs-12">
+                          <button type="submit" class="btn btn-default display-none" name="accountChangeSocialsConfirm" id="accountChangeSocialsConfirmBtn">Confirm</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 <?php } ?>
@@ -304,42 +368,54 @@
                   <form method="post" action="http://192.168.0.104/vongg/form/accountChangeInformations" class="col-xs-12">
                     <div class="form-group col-xs-10 col-md-4" id="changeSloganInput">
                       <label for="slogan">Slogan</label>
-                      <input type="text" class="form-control" name="newSlogan" id="slogan">
+                      <input type="text" class="form-control" value="<?= $model -> userSlogan; ?>" name="newSlogan" id="slogan">
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeShortInfoInput">
+                    <div class="form-group col-xs-10 col-md-8" id="changeShortInfoInput">
                       <label for="shortInfo">Short Info</label>
-                      <input type="text" class="form-control" name="newShortInfo" id="shortInfo">
+                      <textarea class="form-control" rows="3" name="newShortInfo" id="shortInfo"><?= $info['info']; ?></textarea>
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeFunFactInput">
+                    <div class="form-group col-xs-10 col-md-4" id="changeRoleInput">
+                      <label for="role">Role</label>
+                      <input type="text" class="form-control" value="<?= $info['role']; ?>" name="newRole" id="role">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeAgeInput">
+                      <label for="age">Age</label>
+                      <input type="number" class="form-control" min="0" max="100" value="<?= $info['years']; ?>" name="newAge" id="age">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4" id="changeFromInput">
+                      <label for="from">From</label>
+                      <input type="text" class="form-control" value="<?= $info['from']; ?>" name="newFrom" id="from">
+                    </div>
+                    <div class="form-group col-xs-10 col-md-6" id="changeFunFactInput">
                       <label for="funFact">Fun Fact</label>
-                      <input type="text" class="form-control" name="newFunFact" id="funFact">
+                      <input type="text" class="form-control" value="<?= $model -> userFunFact; ?>" name="newFunFact" id="funFact">
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeLaunchOptionsInput">
+                    <div class="form-group col-xs-10 col-md-6" id="changeLaunchOptionsInput">
                       <label for="launchOptions">Launch Options</label>
-                      <input type="text" class="form-control" name="newLaunchOptions" id="launchOptions">
+                      <input type="text" class="form-control" value="<?= $settings['launch']; ?>" name="newLaunchOptions" id="launchOptions">
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeResolutionInput">
+                    <div class="form-group col-xs-10 col-md-6" id="changeResolutionInput">
                       <label for="resolution">Resolution</label>
-                      <input type="text" class="form-control" name="newResolution" id="resolution">
+                      <input type="text" class="form-control" value="<?= $settings['resolution']; ?>" placeholder="e.g. 1920x1080 16:9" name="newResolution" id="resolution">
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeSensitivityInput">
+                    <div class="form-group col-xs-10 col-md-6" id="changeSensitivityInput">
                       <label for="sensitivity">Sensitivity</label>
-                      <input type="text" class="form-control" name="newSensitivity" id="sensitivity">
+                      <input type="text" class="form-control" value="<?= $settings['sens']; ?>" placeholder="e.g. 2.0 DPI 400" name="newSensitivity" id="sensitivity">
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeCrosshairInput">
+                    <div class="form-group col-xs-10 col-md-6" id="changeCrosshairInput">
                       <label for="crosshair">Crosshair</label>
-                      <input type="text" class="form-control" name="newCrosshair" id="crosshair">
+                      <input type="text" class="form-control" value="<?= $settings['crosshair']; ?>" placeholder="Link to your crosshair (pastebin.com recommended)" name="newCrosshair" id="crosshair">
                     </div>
-                    <div class="form-group col-xs-10 col-md-4" id="changeConfigInput">
+                    <div class="form-group col-xs-10 col-md-6" id="changeConfigInput">
                       <label for="config">Config</label>
-                      <input type="text" class="form-control" name="newConfig" id="config">
+                      <input type="text" class="form-control" value="<?= $settings['exec']; ?>" placeholder="Link to your config (pastebin.com recommended)" name="newConfig" id="config">
                     </div>
                     <div class="form-group col-xs-10 col-md-4 display-none" id="changeInformationsPassword">
                       <label for="password">Confirm the action with your password</label>
-                      <input type="password" name="confirmPassword" class="form-control">
+                      <input type="password" name="informationsConfirmPassword" class="form-control">
                     </div>
                     <div class="col-xs-12">
-                      <button type="button" class="btn btn-default" name="changeEmail" id="changeInformationsBtn">Change informations</button>
+                      <button type="button" class="btn btn-default" name="changeInformations" id="changeInformationsBtn">Change informations</button>
                     </div>
                     <div class="col-xs-12">
                       <button type="button" class="btn btn-default display-none" name="accountChangeInformations" id="accountChangeInformationsBtn">Are you sure?</button>
@@ -349,54 +425,36 @@
                     </div>
                   </form>
                 </div>
-                <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeIndividualAchievmentsContent">
+                <div class="col-xs-12 col-md-7 col-md-offset-1" id="changeIndividualAchievmentsContent" count="<?= $achievments['count']; ?>">
                   <div class="account-settings-heading">
                     <h1>Change Individual Achievments</h1>
                   </div>
-                  <div class="account-settings-content">
-                    <form method="post" action="http://192.168.0.104/vongg/form/accountChangeIndividualAchievments" class="col-xs-12">
-                      <div class="form-group col-xs-10 col-md-4" id="changeAchievmentInput">
-                        <label for="achievment">Achievment</label>
-                        <input type="text" class="form-control" name="newAchievment" id="achievment">
-                      </div>
-                      <div class="form-group col-xs-10 col-md-2" id="FirstPlaceInput">
-                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
-                        <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place</span></span>
-                        <input type="checkbox" class="form-control" name="FirstPlace" id="FirstPlace">
-                      </div>
-                      <div class="form-group col-xs-10 col-md-2" id="SecondPlaceInput">
-                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
-                        <span class="second-place"><i class="fa fa-trophy"></i><span class="strong-place">2nd place</span></span>
-                        <input type="checkbox" class="form-control" name="SecondPlace" id="SecondPlace">
-                      </div>
-                      <div class="form-group col-xs-10 col-md-2" id="ThirdPlaceInput">
-                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
-                        <span class="third-place"><i class="fa fa-trophy"></i><span class="strong-place">3td place</span></span>
-                        <input type="checkbox" class="form-control" name="ThirdPlace" id="ThirdPlace">
-                      </div>
-                      <div class="form-group col-xs-10 col-md-2" id="AnotherPlaceInput">
-                        <!-- <span class="first-place"><i class="fa fa-trophy"></i><span class="strong-place">1st place on</span> ESEA MDL League Season 30</span> -->
-                        <span class="place"><i class="fa fa-trophy"></i><span class="strong-place">Another place</span></span>
-                        <input type="number" class="form-control" name="AnotherPlace" id="AnotherPlace" min="4" max="100">
-                      </div>
-                      <div class="form-group col-xs-10 col-md-2" id="addAchievmentInput">
-                        <span><i class="fa fa-plus"></i></span>
-                      </div>
-                      <div class="form-group col-xs-10 col-md-4 display-none" id="changeInformationsPassword">
-                        <label for="password">Confirm the action with your password</label>
-                        <input type="password" name="confirmPassword" class="form-control">
-                      </div>
-                      <div class="col-xs-12">
-                        <button type="button" class="btn btn-default" name="changeEmail" id="changeInformationsBtn">Change informations</button>
-                      </div>
-                      <div class="col-xs-12">
-                        <button type="button" class="btn btn-default display-none" name="accountChangeInformations" id="accountChangeInformationsBtn">Are you sure?</button>
-                      </div>
-                      <div class="col-xs-12">
-                        <button type="submit" class="btn btn-default display-none" name="accountChangeInformationsConfirm" id="accountChangeInformationsConfirmBtn">Confirm</button>
-                      </div>
-                    </form>
-                  </div>
+                  <form method="post" action="http://192.168.0.104/vongg/form/accountChangeIndividualAchievments" class="col-xs-12">
+                    <div class="account-settings-content">
+                      <table class="table account-settings-achievments-table table-hover table-responsive">
+                        <thead>
+                          <th>Achievment</th>
+                          <th>Place</th>
+                        </thead>
+                        <tbody>
+                        <?php $model -> showIndividualAchievments($_SESSION['loginUsername']); ?>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="form-group col-xs-10 col-md-4 display-none" id="changeIndividualAchievmentsPassword">
+                      <label for="password">Confirm the action with your password</label>
+                      <input type="password" name="confirmPassword" class="form-control">
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="button" class="btn btn-default" name="changeIndividualAchievments" id="changeIndividualAchievmentsBtn" disabled>Change individual achievments</button>
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="button" class="btn btn-default display-none" name="accountChangeIndividualAchievments" id="accountChangeIndividualAchievmentsBtn" disabled>Are you sure?</button>
+                    </div>
+                    <div class="col-xs-12">
+                      <button type="submit" class="btn btn-default display-none" name="accountChangeIndividualAchievmentsConfirm" id="accountChangeIndividualAchievmentsConfirmBtn" disabled>Confirm</button>
+                    </div>
+                  </form>
                 </div>
               <?php } ?>
                 <?php if ( $_SESSION['loginPermissionsPower'] >= 100 ) { ?>
